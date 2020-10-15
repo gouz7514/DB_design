@@ -1,0 +1,39 @@
+.log-in-form {
+    margin: 30px auto;
+    border: 1px solid #D1D1D1;
+    width: 50%;
+    background-color: black;
+    color: white;
+    opacity: 0.9;
+    border-radius: 4px;
+}
+.log-in-form-title, .log-in-form-content {
+    margin: 20px;
+}
+.log-in-form-title {
+    font-weight: bold;
+}
+.log-in-row-title {
+    margin-bottom: 10px;
+}
+.log-in-row {
+    width: 100%;
+}
+.input-box {
+    width: 97%; /* 수정 필요 */
+    padding: 5px;
+    border-radius: 8px;
+}
+.log-in-button-area {
+    margin: 30px 0;
+}
+.log-in-button {
+    width: 100%;
+    background-color: #e50914;
+    color: #fff;
+    padding: 7px 17px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
+    cursor: pointer;
+}
