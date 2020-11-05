@@ -4,3 +4,9 @@
 .table-forum-content {
     text-align: center;
 }
+.button-forum-write {
+    background-color: black;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+}

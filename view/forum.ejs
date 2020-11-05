@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>게시판</title>
+  <link rel="stylesheet" href="css/menu-forum.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <div class="title-container">
+    <span class="sign-member">
+        <a class="authLink" href="/user/sign_up">회원가입</a>
+        <a class="authLink" href="/user/login">로그인</a>
+    </span>
+  <div class="title-background">
+    <h1 class="title-content">
+      <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+    </h1>
+  </div>
+  </div>
+
+  <div class="body">
+    <div class="menu">
+      <ul class="select-menu">
+        <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+        <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
+      </ul>
+    </div>
+
+    <div class="body-content">
+      <button type="submit" class="button-forum-write" onclick="location.href='/forum/write'">
+        <span>게시글 쓰기</span>
+      </button>
+      <table class="table-forum">
+        <tr>
+          <th>게시글 No</th>
+          <th>작성자</th>
+          <th>제목</th>
+          <th>내용</th>
+          <th>작품</th>
+          <th>평점</th>
+        </tr>
+        <tr class="table-forum-content">
+          <td>1</td>
+          <td>김아무개</td>
+          <td>개꿀잼</td>
+          <td>영화 재미있어요</td>
+          <td>킹덤</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+      </table>
+      <span class="search-content">
+        <input type="text" class="search-box search-forum" placeholder="게시글 제목을 입력하세요.">
+      </span>
+    </div>
+  </div>
+
+  <footer>
+    Created by<br>
+    김영훈, 김학재, 남호철, 안석진, 윤지아<br>
+  </footer>
+</body>
+</html>

@@ -17,6 +17,11 @@ html {
   margin:auto;
   padding:0 40px;
 }
+.title-logo {
+  width: 230px;
+  height: 100px;
+  margin-top: 10px;
+}
 .sign-member {
   position: absolute;
   top:20px;
@@ -47,7 +52,7 @@ a {
 ul.select-menu {
   width: 1000px;
   list-style: none;
-  margin: 20px;
+  margin: 10px;
   padding-bottom: 40px;
 }
 a.select-menu-detail {
@@ -68,6 +73,11 @@ a.select-menu-detail:hover{
 .body-content {
   width: 1000px;
   margin: auto;
+}
+.search-box {
+  padding: 4px;
+  width: 200px;
+  border-radius: 4px;
 }
 
 footer {

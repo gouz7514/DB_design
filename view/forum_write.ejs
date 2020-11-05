@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>게시판</title>
+  <link rel="stylesheet" href="css/menu-forum-write.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <div class="title-container">
+    <span class="sign-member">
+      <a class="authLink" href="/user/sign_up">회원가입</a>
+      <a class="authLink" href="/user/login">로그인</a>
+    </span>
+  <div class="title-background">
+    <h1 class="title-content">
+      <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+    </h1>
+  </div>
+  </div>
+
+  <div class="body">
+    <div class="menu">
+      <ul class="select-menu">
+        <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+        <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
+      </ul>
+    </div>
+
+    <div class="body-content">
+      <div class="forum-write-form">
+          <form action="" method="post">
+          <div class="forum-write-content">
+              <div class="forum-write-row">
+                  <h3 class="forum-write-row-title">
+                      제목
+                  </h3>
+                  <span class="forum-title-input-box">
+                      <input type="text" class="input-box" placeholder="제목의 길이는 최대 20자 입니다.">
+                  </span>
+              </div>
+              <div class="forum-write-row">
+                 <h3 class="forum-write-row-title">
+                    작품명
+                 </h3>
+                 <span class="forum-id-input-box">
+                     <input type="text" class="input-box">
+                 </span>
+              </div>
+              <div class="forum-write-row">
+                 <h3 class="forum-write-row-title">
+                    내용
+                 </h3>
+                 <span class="forum-content-input-box">
+                     <textarea cols="30" rows="30">
+
+                     </textarea>
+                 </span>
+                  
+              </div>
+              <div class="forum-write-row">
+                 <h3 class="forum-write-row-title">
+                    평점
+                 </h3>
+                  
+              </div>
+              <button type="submit" class="forum-submit">
+                  <span>게시글 등록</span>
+              </button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Created by<br>
+    김영훈, 김학재, 남호철, 안석진, 윤지아<br>
+  </footer>
+</body>
+</html>

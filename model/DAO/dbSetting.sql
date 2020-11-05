@@ -21,10 +21,11 @@ CREATE DATABASE `kimchi`;
 DROP TABLE IF EXISTS `kimchi`.`user`;
 CREATE TABLE `kimchi`.`user` (
   `id` VARCHAR(15) NOT NULL,
-  `password` VARCHAR(32) NOT NULL, # md5
+  `password` VARCHAR(64) NOT NULL, # SHA512
   `nickname` VARCHAR(20) NOT NULL,
   `name` VARCHAR(14) NOT NULL,
   `email` VARCHAR(50) NULL,
+  `salt` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `nickname_UNIQUE` (`nickname` ASC));
