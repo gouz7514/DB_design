@@ -7,12 +7,18 @@
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-<div class="title-background">
-  <h1 class="title-content">
-    <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
-  </h1>
-</div>
+  <div class="title-container">
+    <span class="sign-member">
+      <a class="authLink" href="/user/sign_up">회원가입</a>
+    </span>
+    <div class="title-background">
+      <h1 class="title-content">
+        <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+      </h1>
+    </div>
+  </div>
 <div class="body">
+  
   <div class="menu">
     <ul class="select-menu">
       <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
@@ -28,17 +34,22 @@
           <div class="log-in-row">
             <h3 class="log-in-row-title"><label for="log-in-id">아이디</label></h3>
               <span class="id-input-box">
-                <input type="text" id="userid" class="input-box">
+                <input type="text" id="userid" class="input-box" name="userid">
               </span>
         </div>
 
         <div class="log-in-row">
           <h3 class="log-in-row-title"><label for="log-in-pw">비밀번호</label></h3>
             <span class="pw-input-box">
-              <input type="password" id="pw" class="input-box">
+              <input type="password" id="pw" class="input-box" name="pw">
             </span>
         </div>
-
+        <div>      
+          <p>
+            <label for="keep">로그인 유지</label>
+            <input type="checkbox" name="keep" id="keep">
+          </p>
+        </div>
         <div class="log-in-button-area">
           <button type="submit" class="log-in-button">
             <span>로그인</span>

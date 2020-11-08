@@ -21,7 +21,7 @@ CREATE DATABASE `kimchi`;
 DROP TABLE IF EXISTS `kimchi`.`user`;
 CREATE TABLE `kimchi`.`user` (
   `id` VARCHAR(15) NOT NULL,
-  `password` VARCHAR(64) NOT NULL, # SHA512
+  `password` VARCHAR(128) NOT NULL, # SHA512
   `nickname` VARCHAR(20) NOT NULL,
   `name` VARCHAR(14) NOT NULL,
   `email` VARCHAR(50) NULL,
@@ -29,10 +29,6 @@ CREATE TABLE `kimchi`.`user` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `nickname_UNIQUE` (`nickname` ASC));
-  
-insert into `kimchi`.`user`(`id`, `password`, `nickname`, `name`, `email` )
-values 
-('admin','P@ssw0rd','관리자임','관리자', 'aaaa@gmail.com');
 
 # create show_info table
 DROP TABLE IF EXISTS `kimchi`.`show_info`;
@@ -142,4 +138,3 @@ CREATE TABLE `kimchi`.`like` (
     FOREIGN KEY (`user_id`) REFERENCES `kimchi`.`user` (`id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
 
-  
