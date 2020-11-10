@@ -1,0 +1,34 @@
+.movie-detail-form {
+    margin: 30px auto;
+    border: 1px solid #D1D1D1;
+    width: 90%;
+    background-color: black;
+    color: white;
+    opacity: 0.9;
+    border-radius: 4px; 
+}
+.poster {
+    width: 350px;
+    height: 500px;
+}
+.table {
+    display: inline-block;
+}
+.table-row {
+    height: 50px;
+}
+.info {
+    width: 100px;
+    font-weight: bold;
+    padding-right: 20px;
+    text-align: center;
+}
+tr > td:last-of-type {
+    padding-left: 10px;
+}
+.summary {
+    word-wrap: break-word;
+}
+.go-forum {
+    text-align: center;
+}
