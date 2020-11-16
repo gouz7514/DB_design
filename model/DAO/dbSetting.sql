@@ -137,4 +137,3 @@ CREATE TABLE `kimchi`.`like` (
   CONSTRAINT `FK_USER_ID_LIEK`
     FOREIGN KEY (`user_id`) REFERENCES `kimchi`.`user` (`id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
-

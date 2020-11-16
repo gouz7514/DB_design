@@ -24,6 +24,7 @@ var userDAO = require('./model/dao/userDAO')
 app.use(function(req, res, next){
   if(req.cookies.token){
     userDAO.checkToken(req.cookies.token, function(err, result){
+      console.log("token checked")
       if(err){
         res.locals.user = ''
         return next(err)

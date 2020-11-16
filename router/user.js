@@ -6,6 +6,9 @@ var userDAO = require('../model/DAO/userDAO');
 var path = require('path')
 var fs = require('fs-extra')
 var multer = require('multer')
+const { v4: uuid } = require('uuid');
+var cookieParser = require('cookie-parser')
+var session = require('express-session')
 
 const crypto = require('crypto');
 
@@ -27,12 +30,36 @@ router.post('/login', (req, res, next) => {
             console.log("find user...")
             console.log(inputID, salt, hashPW)
             if(err) return next(err)
-            if(result && req.body.keep){
-                // Session not implemented yet
+            // if(result && req.body.keep){
+
+            //     req.session.user = result
+
+            //     console.log("result.id = " + result.id)
+            //     userDAO.removeToken(result.id, function(err){
+            //         console.log("old token removed")
+            //         if(err) return next(err)
+            //         var newToken = uuid()
+            //         var params = {
+            //             token : newToken,
+            //             user_id : result.id,
+            //             max_date : nowAddOneDay()
+            //         }
+            //         userDAO.makeToken(params, function(err){
+            //             console.log("new token created")
+            //             if(err) return next(err)
+            //             res.cookie('token', newToken, {
+            //                 maxAge : 1000 * 60 * 60 * 24,
+            //                 //httpOnly : true,
+            //                 //  secure : true  ssl만 응답해준다.
+            //             })
+            //             console.log("set new token to cookie")
+            //             res.redirect('/')
+            //         })
+            //     })
+            //}if(result && !req.body.keep){
+            if(result){
                 req.session.user = result
-                res.redirect('/')
-            }if(result && !req.body.keep){
-                req.session.user = result
+                console.log(req.session.user)
                 res.redirect('/')
             }else{
                 res.writeHead(401, {"Content-Type" : "text/html; charset=utf-8"})
@@ -43,27 +70,14 @@ router.post('/login', (req, res, next) => {
             }
         })
     })
-
-
-    // userDAO.userSelectOne([req.body.id, ], function(err, result){
-    //     if(err) return next(err)      
-        
-    //     if(result && req.body.keep){
-
-        
-    //     }else if(result && !req.body.keep){
-    //         // 로그인 성공시
-    //         req.session.user = result
-    //         res.redirect('/')
-    //     }else{
-    //         res.writeHead(401, {"Content-Type" : "text/html; charset=utf-8"})
-    //         res.end(`<script>
-    //                     alert("존재하지 않는 계정입니다.")
-    //                     location.href = '/user/login'
-    //                 </script>`)
-    //     }
-    // })
 });
+
+
+router.get('/logout', function(req, res, next){
+    req.session.destroy();
+    //res.clearCookie('token')
+    res.redirect('/');
+})
 
 router.get('/sign_up', function(req, res, next) {
     res.render("sign_up");
@@ -92,3 +106,7 @@ router.post("/sign_up", function(req,res,next){
 
 module.exports = router
 
+nowAddOneDay = () => {
+    return new Date(new Date().getTime() + (1000*60*60*24))
+}
+   

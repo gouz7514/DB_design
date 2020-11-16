@@ -8,9 +8,15 @@
 </head>
 <body>
   <div class="title-container">
-    <span class="sign-member">
-      <a class="authLink" href="/user/sign_up">회원가입</a>
-      <a class="authLink" href="/user/login">로그인</a>
+    <!-- login 여부 확인해서 선택적으로 보여준다. -->
+    <span class="sign-member">   
+      <% if(user){ %>
+        <a class="authLink" href="/user/detail"><%=user.name%> 님</a>
+          <a class="authLink" href="/user/logout">로그아웃</a>
+      <% }else{ %>
+          <a class="authLink" href="/user/sign_up">회원가입</a>
+          <a class="authLink" href="/user/login">로그인</a>
+      <% } %>   
     </span>
   <div class="title-background">
     <h1 class="title-content">
@@ -64,9 +70,13 @@
                  </h3>
                   
               </div>
+            <% if(user){ %>
               <button type="submit" class="forum-submit">
                   <span>게시글 등록</span>
               </button>
+            <% }else{ %>
+              로그인이 필요합니다.
+            <% } %>
           </div>
           </form>
       </div>
