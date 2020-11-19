@@ -30,7 +30,8 @@ member: 김영훈, 김학재, 남호철, 안석진, 윤지아<br>
   
 - DB Scheme Setting
   on mysql shell run script by
-  > mysql> source <PROJECT_PATH>/model/DAO/dbSetting.sql
+  > mysql> source <PROJECT_PATH>/model/DAO/dbSetting.sql<br>
+  > mysql> source <PROJECT_PATH>/model/DAO/dataSetting.sql
 
 ### Run node.js Server
   - package install<br>
