@@ -22,7 +22,7 @@ member: 김영훈, 김학재, 남호철, 안석진, 윤지아<br>
 - User Setting <br>
   make user for project with
   > create user 'dbdesign'@'%' identified with mysql_native_password BY 'P@ssw0rd'; <br>
-  grant all privileges on *.* to 'dbdesign'@'%';
+  grant all privileges on kimchi.* to 'dbdesign'@'%';
   
   on root or other user in MySQL who have privileges.<br>
   user id = dbdesign, pw = P@ssw0rd<br>
