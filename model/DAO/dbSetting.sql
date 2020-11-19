@@ -40,7 +40,8 @@ CREATE TABLE `kimchi`.`show_info` (
   `data_added` DATE NULL,
   `release_year` INT NOT NULL,
   `duration`  VARCHAR(45) NOT NULL,
-  `poster` VARCHAR(50) NULL, # path of poster img 
+  `poster` VARCHAR(100) NULL, # path of poster img 
+  `description` TEXT NULL,
   PRIMARY KEY (`show_id`),
   UNIQUE INDEX `show_id_UNIQUE` (`show_id` ASC));
   
@@ -137,3 +138,4 @@ CREATE TABLE `kimchi`.`like` (
   CONSTRAINT `FK_USER_ID_LIEK`
     FOREIGN KEY (`user_id`) REFERENCES `kimchi`.`user` (`id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
+

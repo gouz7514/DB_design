@@ -3,12 +3,12 @@ var router = express.Router()
 
 var userDAO = require('../model/DAO/userDAO');
 
-var path = require('path')
-var fs = require('fs-extra')
-var multer = require('multer')
-const { v4: uuid } = require('uuid');
-var cookieParser = require('cookie-parser')
-var session = require('express-session')
+// var path = require('path')
+// var fs = require('fs-extra')
+// var multer = require('multer')
+// const { v4: uuid } = require('uuid');
+// var cookieParser = require('cookie-parser')
+// var session = require('express-session')
 
 const crypto = require('crypto');
 
@@ -64,7 +64,7 @@ router.post('/login', (req, res, next) => {
             }else{
                 res.writeHead(401, {"Content-Type" : "text/html; charset=utf-8"})
                 res.end(`<script>
-                            alert("존재하지 않는 계정입니다.")
+                            alert("ID와 비밀번호를 확인해주세요.")
                             location.href = '/user/login'
                         </script>`)
             }
@@ -72,6 +72,12 @@ router.post('/login', (req, res, next) => {
     })
 });
 
+router.get('/detail', (req, res, next) => {
+    userDAO.userDetail(req.query.id, (err, result) => {
+        if(err) return next(err)
+        res.render('userDetail',{userDetail : result})
+    })
+});
 
 router.get('/logout', function(req, res, next){
     req.session.destroy();
@@ -103,6 +109,22 @@ router.post("/sign_up", function(req,res,next){
         res.redirect('/user/login')
     })
 });
+
+router.get('/delete', function(req, res, next){
+    userDAO.userDelete(req.query.no, function(err, result){
+        if(err) return next(err)
+        res.redirect('/user/list')
+    })
+})
+
+router.post('/modify', function(req, res, next){
+    var param = [req.body, req.query.id]
+    userDAO.userModify(param, function(err, result){
+        if(err) return next(err)
+        res.redirect('/user/detail?no='+req.query.no)
+    })
+})
+
 
 module.exports = router
 

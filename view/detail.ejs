@@ -12,7 +12,7 @@
     <!-- login 여부 확인해서 선택적으로 보여준다. -->
     <span class="sign-member">   
       <% if(user){ %>
-        <a class="authLink" href="/user/detail"><%=user.name%> 님</a>
+        <a class="authLink" href="/user/detail?id=<%=user.id%>"><%=user.name%> 님</a>
           <a class="authLink" href="/user/logout">로그아웃</a>
       <% }else{ %>
           <a class="authLink" href="/user/sign_up">회원가입</a>
@@ -21,7 +21,7 @@
     </span>
     <div class="title-background">
       <h1 class="title-content">
-        <a href="menu-movie.html"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+        <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
       </h1>
     </div>
   </div>
@@ -30,17 +30,16 @@
       <div class="menu">
         <ul class="select-menu">
           <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
-          <a class="select-menu-detail" href="menu-forum.html"><li>게시판</li></a>
+          <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
         </ul>
       </div>
-
       <div class="body-content">
         <div class="movie-detail-form">
             <table class="movie-detail table">
                 <tr class="movie-detail table-row">
-                    <td rowspan="10"><img class="movie-detail poster" src="img/기묘한이야기.jpg"></td>
+                    <td rowspan="10"><img class="movie-detail poster" src="<%=showData.poster%>"></td>
                     <td class="movie-detail info">제목</td>
-                    <td class="movie-detail title">제목이 표시됩니다.</td>
+                    <td class="movie-detail title"><%=showData.title%></td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">감독</td>
@@ -52,27 +51,23 @@
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">국가</td>
-                    <td class="movie-detail country">국가가 표시됩니다.</td>
-                </tr>
-                <tr class="movie-detail table-row">
-                    <td class="movie-detail info">등급</td>
-                    <td class="movie-detail type">등급이 표시됩니다.</td>
+                    <td class="movie-detail country"><%=showData.country%></td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">장르</td>
-                    <td class="movie-detail genre">장르가 표시됩니다.</td>
+                    <td class="movie-detail type"><%=showData.type%></td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">제작 년도</td>
-                    <td class="movie-detail release_year">제작 년도가 표시됩니다.</td>
+                    <td class="movie-detail release_year"><%=showData.release_year%></td>
                 </tr>
                 <tr class="movie-detail table-row">
-                    <td class="movie-detail info">상영 기간</td>
-                    <td class="movie-detail duration">상영 기간이 표시됩니다.</td>
+                    <td class="movie-detail info">길이</td>
+                    <td class="movie-detail duration"><%=showData.duration%></td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">줄거리</td>
-                    <td class="movie-detail summary">줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.줄거리가 표시됩니다.</td>
+                    <td class="movie-detail summary"><%=showData.description%></td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail go-forum" colspan="2">

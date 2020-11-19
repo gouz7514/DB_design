@@ -10,11 +10,34 @@ var userDAO = {
     },
 
     userSelectOne : (id, callback) => {
-        // nott implemented
         var sql = 'select * from `kimchi`.`user` where id = ? and password = ?'
         con.query(sql, id, function(err, result){
             if(err) return callback(err)
             callback(null, result[0])
+        })
+    },
+
+    userDetail : (id, callback) => {
+        var sql = 'select * from `kimchi`.`user` where id = ?'
+        con.query(sql, id, function(err, result){
+            if(err) return callback(err)
+            callback(null, result[0])
+        })
+    },
+
+    userDelete : (no, callback) => {
+        var sql = 'delete from `kimchi`.`user` where id = ?'
+        con.query(sql, no, (err, result) => {
+            if(err) return callback(err)
+            callback(null, result) 
+        })
+    },
+    
+    userModify : (param, callback) => { 
+        var sql = 'update `kimchi`.`user` set ? where id = ?'
+        con.query(sql, param, (err, result) => {
+            if(err) return callback(err)
+            callback(null, result) 
         })
     },
 

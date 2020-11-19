@@ -11,7 +11,7 @@
     <!-- login 여부 확인해서 선택적으로 보여준다. -->
     <span class="sign-member">   
       <% if(user){ %>
-        <a class="authLink" href="/user/detail"><%=user.name%> 님</a>
+        <a class="authLink" href="/user/detail?id=<%=user.id%>"><%=user.name%> 님</a>
           <a class="authLink" href="/user/logout">로그아웃</a>
       <% }else{ %>
           <a class="authLink" href="/user/sign_up">회원가입</a>
