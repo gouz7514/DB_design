@@ -21,7 +21,19 @@ select * from `kimchi`.`director`;
 select * from `kimchi`.`show_director`;
 ##############################
 
+# 같은 파일에서 작업하기 때문에 항상 git pull 먼저 받고 작업할것
+# 동시에 같은 파일을 수정하고 합치려고 할 경우 conflict가 발생하기 때문에 작업 시작한 인원은 작업시작을 알려주거나 겹치지 않도록 조율할것.
+# 혹은 confic가 나지 않도록 조율해서 잘 merge 시킬것!
 # 삽입시 괄호안에 데이터를 채워넎으면 됨. 괄호들을 콤마(,)로 이어나가며 마지막 삽입 데이터가 들어간 괄호 뒤에는 세미콜론(;) 넣을것
+# 개행(줄바꿈)이 필요한 경우 <br>을 이용할것
+# 수정시 아래의 표를 위에 붙여나가면서 수정내용 표시할것
+# 예시
+	/********************************
+	* edit by :  남호철           
+	* date    :  2020.11.19                
+	* email   :  nhc616@gmail.com      
+	* comment :  더미 데이터 삽입 참고 작성    
+	*********************************/ 
 
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
