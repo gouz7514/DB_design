@@ -138,4 +138,7 @@ CREATE TABLE `kimchi`.`like` (
   CONSTRAINT `FK_USER_ID_LIEK`
     FOREIGN KEY (`user_id`) REFERENCES `kimchi`.`user` (`id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
-
+select * from kimchi.user;
+insert into `kimchi`.`user`
+values('admin', '8671769cbee084cf21e2854f38f751211ae94c35273763665003dbe2ef50b205bab0497f13feeeb19c9f448c17f8118094ac6a0765e59ee10ef9bded7213aa8d'
+, '관리자', '관리자', 'admin@신김치.com', '746643562609')

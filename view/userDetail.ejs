@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>로그인</title>
+  <link rel="stylesheet" href="css/sign-login.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <div class="title-container">
+    <!-- login 여부 확인해서 선택적으로 보여준다. -->
+    <span class="sign-member">
+        <% if(user){ %>
+            <a class="authLink" href="/user/detail?id=<%=user.id%>"><%=user.name%> 님</a>
+            <a class="authLink" href="/user/logout">로그아웃</a>
+        <% }else{ %>
+            <a class="authLink" href="/user/sign_up">회원가입</a>
+            <a class="authLink" href="/user/login">로그인</a>
+        <% } %>    
+    </span>
+    <div class="title-background">
+      <h1 class="title-content">
+        <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+      </h1>
+    </div>
+  </div>
+  <div class="body">
+  
+  <div class="menu">
+    <ul class="select-menu">
+      <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+      <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
+    </ul>
+  </div>
+    <div class="log-in-form">
+        <h1><%=user.name%>님의 회원정보</h1>
+        <form action="/user/modify?no=<%=userDetail.no%>" method="POST">
+            <p>
+                id : <input type="text" name="id" value="<%=userDetail.id%>" disabled>
+            </p>
+            <p>
+                pw : <input type="password" name="pw" value="<%=userDetail.pw%>">
+            </p>
+            <p>
+                name : <input type="text" name="name" value="<%=userDetail.name%>">
+            </p>
+            <p>
+              <!-- session의 user.id와 현재 페이지의 id가 같은 경우에만 버튼 보이도록 설정 -->
+                <% if(user.id === userDetail.id){ %>
+                    <button id="modify_btn" type="submit" disabled>수정</button>
+                    <button id="delete_btn" type="button" disabled>삭제</button>
+                <% } %>
+                <!-- 현재 disabled로 막아둠 -->
+            </p>
+        </form>
+    </div>
+  </div>
+</div>
+<footer>
+  Created by<br>
+  김영훈, 김학재, 남호철, 안석진, 윤지아<br>
+</footer>
+</body>
+<script>
+  $('#delete_btn').click(function(){
+      location.href = '/user/delete?no=<%=user.id%>'
+    });
+</script>
+</html>
