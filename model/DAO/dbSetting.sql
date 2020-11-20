@@ -148,4 +148,3 @@ CREATE TABLE `kimchi`.`like` (
 		ON DELETE CASCADE ON UPDATE CASCADE);
         
 
-

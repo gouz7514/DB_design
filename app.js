@@ -21,6 +21,7 @@ app.use(session({
 }));
 
 var userDAO = require('./model/dao/userDAO')
+var infoDAO = require('./model/dao/infoDAO')
 app.use(function(req, res, next){
   if(req.cookies.token){
     userDAO.checkToken(req.cookies.token, function(err, result){
@@ -48,7 +49,10 @@ app.set('view engine', 'ejs');
 
 //기본페이지는 index
 app.get('/', function (req, res) {
-    res.render('index')  //render 해서 index에서 받아가도록
+    infoDAO.getShowBrief((err, showInfo)=>{
+      if(err) return next(err) 
+        res.render('index', {info : showInfo})  //render 해서 index에서 받아가도록      
+    })
 });
 
 // user page

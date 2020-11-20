@@ -35,16 +35,13 @@
     <div class="body-content">
       <table class="table-movie">
         <tr>
-          <td><img class="table-movie-content" src="img/기묘한이야기.jpg" alt="기묘한 이야기 포스터">기묘한 이야기</td>
-          <td><img class="table-movie-content" src="img/나르코스.jpg" alt="나르코스 포스터">나르코스</td>
-          <td><img class="table-movie-content" src="img/도깨비.jpg" alt="도깨비 포스터">도깨비</td>
-          <td><img class="table-movie-content" src="img/살아있다.jpg" alt="살아있다 포스터">살아있다</td>
-        </tr>
-        <tr>
-          <td><img class="table-movie-content" src="img/왕좌의게임.jpg" alt="왕좌의게임 포스터">왕좌의 게임</td>
-          <td><img class="table-movie-content" src="img/위쳐.jpg" alt="위쳐 포스터">위쳐</td>
-          <td><img class="table-movie-content" src="img/종이의집.jpg" alt="종이의집 포스터">종이의 집</td>
-          <td><img class="table-movie-content" src="img/킹덤.jpg" alt="킹덤 포스터">킹덤</td>
+          <%for(var i in info){%>
+          <td><a href="/show/<%=info[i].show_id%>"><img class="table-movie-content" src="<%=info[i].poster%>"><%=info[i].title%></td></a>
+            <%if (i==3){%>
+              </tr>
+              <tr>
+            <%}%>
+          <%}%>
         </tr>
       </table>
     </div>
