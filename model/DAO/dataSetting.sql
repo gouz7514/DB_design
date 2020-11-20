@@ -86,13 +86,3 @@ select * from `kimchi`.`show_actor`;
 select * from `kimchi`.`director`;
 select * from `kimchi`.`show_director`;
 ##############################
-
-select a.actor_id, name, birth, death, a.description
-from kimchi.actor a join kimchi.show_actor sa 
-on sa.actor_id = a.actor_id
-where sa.show_id = 1;
-
-select d.director_id, name, birth, death, d.description
-from kimchi.director d join kimchi.show_director sd 
-on sd.director_id = d.director_id
-where sd.show_id = 1;
