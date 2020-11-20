@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>로그인</title>
+  <link rel="stylesheet" href="css/sign-login.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <div class="title-container">
+    <!-- login 여부 확인해서 선택적으로 보여준다. -->
+    <span class="sign-member">
+        <% if(user){ %>
+            <a class="authLink" href="/user/detail?id=<%=user.id%>"><%=user.name%> 님</a>
+            <a class="authLink" href="/user/logout">로그아웃</a>
+        <% }else{ %>
+            <a class="authLink" href="/user/sign_up">회원가입</a>
+            <a class="authLink" href="/user/login">로그인</a>
+        <% } %>    
+    </span>
+    <div class="title-background">
+      <h1 class="title-content">
+        <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+      </h1>
+    </div>
+  </div>
+  <div class="body">
+  
+  <div class="menu">
+    <ul class="select-menu">
+      <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+      <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
+    </ul>
+  </div>
+            프로필 임시 페이지
+    </div>
+  </div>
+</div>
+<footer>
+  Created by<br>
+  김영훈, 김학재, 남호철, 안석진, 윤지아<br>
+</footer>
+</body>
+</html>

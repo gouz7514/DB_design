@@ -29,6 +29,14 @@ CREATE TABLE `kimchi`.`user` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `nickname_UNIQUE` (`nickname` ASC));
+  
+## add administrator and test user.
+insert into `kimchi`.`user`
+values
+('admin', '8671769cbee084cf21e2854f38f751211ae94c35273763665003dbe2ef50b205bab0497f13feeeb19c9f448c17f8118094ac6a0765e59ee10ef9bded7213aa8d', 
+'관리자', '관리자', 'admin@신김치.com', '746643562609'),
+('user', 'dfee98a3c20ae10f8bd7159c9b50d491b0f01237bd83848f5f5f14dbb72ac8fe770b0a9d2de3ee046c0bea245d66ba60835bc762bf679596ab63370275e986ff', 
+'테스트 유저', '테스트 유저', 'test@kimchi.com', '1524977164622');
 
 # create show_info table
 DROP TABLE IF EXISTS `kimchi`.`show_info`;
@@ -52,7 +60,7 @@ CREATE TABLE `kimchi`.`director` (
   `name` VARCHAR(50) NOT NULL,
   `birth` VARCHAR(20) NULL,
   `death` VARCHAR(20) NULL,
-  `description` BLOB(2000) NULL,
+  `description` TEXT NULL,
   PRIMARY KEY (`director_id`),
   UNIQUE INDEX `director_id_UNIQUE` (`director_id` ASC));
   
@@ -63,7 +71,7 @@ CREATE TABLE `kimchi`.`actor` (
   `name` VARCHAR(50) NOT NULL,
   `birth` VARCHAR(20) NULL,
   `death` VARCHAR(20) NULL,
-  `description` BLOB(2000) NULL,
+  `description` TEXT NULL,
   PRIMARY KEY (`actor_id`),
   UNIQUE INDEX `actor_id_UNIQUE` (`actor_id` ASC));
   
@@ -100,7 +108,7 @@ CREATE TABLE `kimchi`.`board` (
   `show_id` INT NOT NULL,
   `user_id` CHAR(15) NOT NULL,
   `title` CHAR(40) NOT NULL,
-  `body` BLOB(2000) NOT NULL,
+  `body` TEXT NOT NULL,
   `rating` FLOAT NOT NULL,
   `like` INT default 0,
   PRIMARY KEY (`article_no`),
@@ -138,7 +146,6 @@ CREATE TABLE `kimchi`.`like` (
   CONSTRAINT `FK_USER_ID_LIEK`
     FOREIGN KEY (`user_id`) REFERENCES `kimchi`.`user` (`id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
-select * from kimchi.user;
-insert into `kimchi`.`user`
-values('admin', '8671769cbee084cf21e2854f38f751211ae94c35273763665003dbe2ef50b205bab0497f13feeeb19c9f448c17f8118094ac6a0765e59ee10ef9bded7213aa8d'
-, '관리자', '관리자', 'admin@신김치.com', '746643562609')
+        
+
+

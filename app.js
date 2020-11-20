@@ -63,6 +63,10 @@ app.use('/forum', forum)
 var show = require('./router/show')
 app.use('/show', show)
 
+// profile page
+var profile = require('./router/profile')
+app.use('/profile', profile)
+
 // error handling
 app.use(function (err, req, res, next) {
 	console.error(err);

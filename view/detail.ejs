@@ -43,11 +43,19 @@
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">감독</td>
-                    <td class="movie-detail director">감독이 표시됩니다.</td>
+                    <td class="movie-detail director">
+                    <%for(var i in showData.director){ %>
+                      <a href="/profile/director_<%=showData.director[i].director_id%>"><%=showData.director[i].name%></a>
+                    <%}%>
+                    </td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">배우</td>
-                    <td class="movie-detail cast">배우가 표시됩니다.</td>
+                    <td class="movie-detail cast">
+                    <%for(var i in showData.actor){ %>
+                      <a href="/profile/actor_<%=showData.actor[i].actor_id%>"><%=showData.actor[i].name%></a>
+                    <%}%>
+                    </td>
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail info">국가</td>

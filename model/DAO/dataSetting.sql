@@ -12,15 +12,6 @@
 * email   :                      
 * comment :                      
 *********************************/ 
-
-##############################
-select * from `kimchi`.`show_info`;
-select * from `kimchi`.`actor`;
-select * from `kimchi`.`show_actor`;
-select * from `kimchi`.`director`;
-select * from `kimchi`.`show_director`;
-##############################
-
 # 같은 파일에서 작업하기 때문에 항상 git pull 먼저 받고 작업할것
 # 동시에 같은 파일을 수정하고 합치려고 할 경우 conflict가 발생하기 때문에 작업 시작한 인원은 작업시작을 알려주거나 겹치지 않도록 조율할것.
 # 혹은 confic가 나지 않도록 조율해서 잘 merge 시킬것!
@@ -87,3 +78,21 @@ insert into `kimchi`.`show_director`
  # (`show_id`, `director_id`) 순서
  (1, 1); # #살아있다 / 조일형 
  
+ 
+##############################
+select * from `kimchi`.`show_info`;
+select * from `kimchi`.`actor`;
+select * from `kimchi`.`show_actor`;
+select * from `kimchi`.`director`;
+select * from `kimchi`.`show_director`;
+##############################
+
+select a.actor_id, name, birth, death, a.description
+from kimchi.actor a join kimchi.show_actor sa 
+on sa.actor_id = a.actor_id
+where sa.show_id = 1;
+
+select d.director_id, name, birth, death, d.description
+from kimchi.director d join kimchi.show_director sd 
+on sd.director_id = d.director_id
+where sd.show_id = 1;

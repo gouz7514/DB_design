@@ -1,26 +1,37 @@
 var express = require('express');
-const showDAO = require('../model/DAO/showDAO');
+const infoDAO = require('../model/DAO/infoDAO');
 var router = express.Router()
 
 router.use(express.static('public'))
 
 router.get('/:showId', (req, res, next) => {
-    showDAO.getShowInfo(parseInt(req.params.showId), (err, showInfo)=>{
+    infoDAO.getShowInfo(parseInt(req.params.showId), (err, showInfo)=>{
         if(err) return next(err) 
-        console.log(showInfo)
-        showData = {
-            show_id : showInfo.show_id,
-            title : showInfo.title,
-            country : showInfo.country,
-            data_added : showInfo.data_added,
-            release_year : showInfo.release_year,
-            duration : showInfo.duration,
-            type : showInfo.type,
-            poster : showInfo.poster,
-            description : showInfo.description.replaceAll('$$$', '<br>'),
-        }
-        console.log(showData)
-        res.render('detail', showData)
+        //console.log(showInfo)
+        infoDAO.getShowActor(parseInt(req.params.showId), (err, actorInfo)=>{
+            if(err) return next(err) 
+            infoDAO.getShowDirector(parseInt(req.params.showId), (err, directorInfo)=>{
+                if(err) return next(err) 
+                //console.log(actorInfo[0], directorInfo[0])
+
+                showData = {
+                    show_id : showInfo.show_id,
+                    title : showInfo.title,
+                    country : showInfo.country,
+                    data_added : showInfo.data_added,
+                    release_year : showInfo.release_year,
+                    duration : showInfo.duration,
+                    type : showInfo.type,
+                    poster : showInfo.poster,
+                    description : showInfo.description.replaceAll('$$$', '<br>'),
+                    actor : actorInfo,
+                    director : directorInfo,
+                }
+                //console.log(showData)
+                res.render('detail', showData)
+            })
+        })
+
     })
 });
 
