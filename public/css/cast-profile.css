@@ -1,0 +1,26 @@
+.cast-profile-form {
+    margin: 30px auto;
+    border: 1px solid #D1D1D1;
+    width: 50%;
+    background-color: black;
+    color: white;
+    opacity: 0.9;
+    border-radius: 4px;
+    height: 60vh;
+}
+.cast-profile-form-title, .cast-profile-form-content {
+    margin: 20px;
+}
+.table-row {
+    margin-bottom: 10px;
+    height: 50px;
+}
+.rowname {
+    text-align: center;
+    padding-right: 20px;
+    font-weight: bold;
+    width: 100px;
+}
+.cast-description {
+    word-wrap: break-word;
+}
