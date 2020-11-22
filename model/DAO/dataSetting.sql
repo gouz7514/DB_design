@@ -1013,3 +1013,416 @@ insert into `kimchi`.`show_director`
  # 20(`show_id`, `director_id`) 순서
  (21, 13); # #사자 / 김주환
  
+/********************************
+* edit by : 안석진             
+* date    : 2020.11.22                     
+* email   : jeany980224@naver.com                     
+* comment : 더미데이터 생성                     
+*********************************/ 
+insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+('써클', 'SF,스릴러', '미국', '2015-05-28', 2015, '86분', 
+'https://movie-phinf.pstatic.net/20150317_148/1426578223178PrvBH_JPEG/movie_image.jpg', 
+'서로 낯선사람들이 감금되어 사형을 기다리고 있다.<br>
+이들은 구원받을 가치가 있는 한 명을 선택해야만 하는 불가능한 상황에 직면한다.'); 
+ 
+ insert into `kimchi`.`actor`(`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+ ('줄리 벤즈','1972년 5월 1일','',
+ '학력 : 뉴욕 대학교<br>
+ 데뷔: 1990년 영화 \'Two Evil Eyes\'<br>'),
+('머시 맬릭','1972년 3월 5일','',
+'학력 : 스탠포드 대학<br>');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_info`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+ 
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(22, 43), # 써클/ 줄리 벤즈
+(22, 44); # 써클 / 머시 맬릭
+
+insert into `kimchi`.`director`(`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+('아론 한','','','작품: 써클(2015) <br> 볼트(2011~)');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (22, 21); # 써클 / 아론 한
+ 
+ insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+('슈퍼배드', '애니메이션', '미국', '2010-09-16', 2010, '95분', 
+'https://movie-phinf.pstatic.net/20111223_88/13246223254249rqmQ_JPEG/movie_image.jpg', 
+'각 나라를 대표하는 명소들을 한 번에 훔쳐버린 기상천외한 주인공 그루<br>
+ 그는 세계 최고의 악당이 되기 위하여 다른 사람이 절대 훔칠 수 없는 것을 하나 훔치기로 마음 먹는다.<br>그것은 바로 달!!!<br>
+ 달을 훔치기 위한 최신식 장비를 구하기 위해 어쩔 수 없이 고아원의 세 소녀들을 맡게 된 그루는 세 소녀들과 함께 살게 되면서 세상에서 가장 어려운 일은 악당이 되는 것이 아니라 
+ 바로 이 소녀들을 키우는 일임을 알게 된다.<br>
+ 소녀들에 의해 점차 사랑을 배우고 변화되어 가는 그루, 과연 그는 달을 훔칠 수 있을것인가? <br> 소녀들과 그루는 어떻게 될 것인가?'); 
+ 
+ insert into `kimchi`.`actor`(`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+ ('스티브 카렐','1962년 8월 16일','',
+ '배역: 그루 목소리 역'),
+('김태연','1989년 3월 9일','',
+'배역 : 첫째딸 마고 더빙 목소리 역');
+ 
+
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(23, 45), # 슈퍼배드/ 스티브 카렐
+(23, 46); # 슈퍼배드 / 김태연
+
+
+insert into `kimchi`.`director`(`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+('피에르 꼬팽','1967년 11월 1일','',
+'수상: 2009년 33회 안시 국제애니메이션 페스티벌 특별상 - TV시리즈부문');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (23, 22); # 슈퍼배드 / 피에르 꼬팽
+ 
+ 
+  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+('씽', '애니메이션', '미국', '2016-12-21', 2016, '108분', 
+'https://movie-phinf.pstatic.net/20161208_30/1481172865937GitfC_JPEG/movie_image.jpg', 
+'한때 잘나갔던 문(Moon) 극장의 주인 코알라 ‘버스터 문’(매튜 맥커너히)은 극장을 되살리기 위해 대국민 오디션을 개최한다.<br>
+ 하지만 한 순간의 실수로 우승 상금이 1,000달러에서 10만 달러로 바뀌게 되고<br>
+ 이로 인해 전국 각지에서 동물들이 몰려와 오디션에 참가하게 된다.<br>
+ 25남매를 둔 슈퍼맘 돼지 ‘로지타’, 남자친구와 록스타의 꿈을 키우는 고슴도치 ‘애쉬’,<br>
+ 범죄자 아버지를 둔 고릴라 ‘조니’, 무대가 두렵기만 한 코끼리 소녀 ‘미나’,<br>
+ 그리고 오직 상금이 목적인 생쥐 ‘마이크’까지!<br>
+ 꿈을 펼치기 위해 한 자리에 모인 이들은 자신들의 무대를 시작하는데…'); 
+ 
+ insert into `kimchi`.`actor`(`actor_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+ (47,'매튜 맥커너히','1969년 11월 14일','',
+ '배역: 버스터 문 목소리 역'),
+(48,'리즈 위더스푼','1976년 3월 22일','',
+'배역 : 로지타 목소리 역');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_info`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+	
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(24, 47), # 씽/ 매튜 맥커너히
+(24, 48); # 씽 / 리즈 위더스푼
+
+insert into `kimchi`.`director`(`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+('가스 제닝스','1972년 3월 4일','','');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (24, 23); # 슈퍼배드 / 피에르 꼬팽
+ 
+ ######
+  
+  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+('반도', '액션,드라마', '한국', '2020-07-15', 2020, '116분', 
+'https://movie-phinf.pstatic.net/20200624_137/15929908359489lOON_JPEG/movie_image.jpg', 
+'[전대미문의 재난 그 후 4년 폐허의 땅으로 다시 들어간다!]<br>
+ 4년 전, 나라 전체를 휩쓸어버린 전대미문의 재난에서 가까스로 탈출했던 ‘정석’ 바깥세상으로부터 철저히 고립된 반도에 다시 들어가야 하는 피할 수 없는 제안을 받는다.<br>
+ 제한 시간 내에 지정된 트럭을 확보해 반도를 빠져 나와야 하는 미션을 수행하던 중<br>
+ 인간성을 상실한 631부대와 4년 전보다 더욱 거세진 대규모 좀비 무리가 정석 일행을 습격한다.<br>
+ 절체절명의 순간, 폐허가 된 땅에서 살아남은 ‘민정’(이정현) 가족의 도움으로 위기를 가까스로 모면하고<br>
+ 이들과 함께 반도를 탈출할 수 있는 마지막 기회를 잡기로 한다.<br>
+ 되돌아온 자, 살아남은 자 그리고 미쳐버린 자 필사의 사투가 시작된다!'); 
+ 
+ insert into `kimchi`.`actor`(`actor_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (아이디,이름, 출생, 사망, 설명) 순서 
+ (49,'강동원','1981년 1월 18일','',
+ '수상: 제 29회 부일 영화상 남자 인기스타상<br>
+		제 16회 뉴욕 아시아 영화제 아시아 스타상<br>
+        제 26회 청룡영화상 인기스타상'),
+('50','이정현','1980년 2월 7일','',
+'학력 : 중앙대학교 연극영화과<br>
+수상: 제 1회 더 서울어워즈 영화 여우조연상<br>
+	제 17회 청룡영화상 신인여우상<br>
+    제 16회 한국영화평론가협회상 신인여우상');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_info`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+	
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(25, 49), # 반도/ 강동원
+(25, 50); # 반도 / 이정현
+
+insert into `kimchi`.`director`(`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+('연상호','1978년 12월 25일','','
+수상: 제 53회 백상예술대상 영화부문 신인 감독상<br>
+	제 8회 올해의 영화상 올해의 발견상<br>
+    제 49회 시체스 영화제 감독상');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (25, 24); # 반도 / 연상호
+ ######
+ 
+   insert into `kimchi`.`show_info`(`show_id`,`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+(26,'역린', '드라마', '한국', '2014-04-30', 2014, '135분', 
+'https://movie-phinf.pstatic.net/20200624_137/15929908359489lOON_JPEG/movie_image.jpg', 
+'인시(寅時) 정각(오전 3시)<br>
+ ‘과인은 사도세자의 아들이다.’ 정조 1년, 끊임없는 암살 위협에 시달리며 밤에도 잠을 이루지 못하는 정조(현빈). 정조가 가장 신임하는 신하 상책(정재영)은 그의 곁을 밤낮으로 그림자처럼 지킨다.<br>
+ 인시(寅時) 반각(오전 4시)<br>
+ 날이 밝아오자 할마마마 정순왕후에게 아침 문안인사를 위해 대왕대비전으로 향하는 정조. 왕의 호위를 담당하는 금위영 대장 홍국영(박성웅)과 상책이 그의 뒤를 따른다.<br>
+ 묘시(卯時) 정각(오전 5시)<br>
+ ‘주상이 다치면 내가 강녕하지 않아요.’ 노론 최고의 수장인 정순왕후(한지민)는 넌지시 자신의 야심을 밝히며 정조에게 경고한다.<br>
+ 묘시(卯時) 반각(오전 6시)<br>
+ 정조의 처소 존현각에는 세답방 나인 월혜(정은채)가 의복을 수거하기 위해 다녀가고, 정조의 어머니 혜경궁(김성령)이 찾아와 ‘지난 밤 꿈자리가 흉했다’며 아들의 안위를 걱정한다.<br><br>
+ 진시(辰時) 육각(오전 8시 30분)<br>
+ 한편 궐 밖, 조선 최고의 실력을 지닌 살수(조정석)는 오늘 밤 왕의 목을 따오라는 광백(조재현)의 암살 의뢰를 받게 되는데…<br>
+ 왕의 암살을 둘러싸고 살아야 하는 자, 죽여야 하는 자, 살려야 하는 자들의 엇갈린 운명의 24시가 시작된다!'); 
+ 
+ insert into `kimchi`.`actor`(`actor_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (아이디,이름, 출생, 사망, 설명) 순서 
+ (51,'현빈','1982년 9월 25일','',
+ '소속사: VAST 엔터테인먼트 <br>
+ 수상: 제 56회 백상예술대상 TV남자최우수연기상<br>
+		제55회 백상예술대상 TV남자최우수연기상'),
+('52','정재영','1970년 11월 21일','',
+'학력 : 중앙대학교 연극영화과<br>
+수상: 제 3회 들꽃영화상 남우주연상<br>
+	제 25회 청룡영화상 남우조연상<br>
+	제 68회 로카르노 영화제 국제경쟁-남우주연상');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_director`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+	
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(26, 51), # 역린/ 현빈
+(26, 52); # 역린 / 정재영
+
+insert into `kimchi`.`director`(`director_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+(25,'이재규','1970년 10월 07일','','
+학력: 서울대학교 신문학과 <br>
+작품: 영화 완벽한 타인(2018)<br>
+	드라마 더킹 투하트(2012)<br>');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (26, 25); # 반도 / 연상호
+ 
+ 
+ #########
+ insert into `kimchi`.`show_info`(`show_id`,`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+(27,'너의 결혼식', '멜로,로맨스', '한국', '2018-08-22', 2018, '110분', 
+'https://movie-phinf.pstatic.net/20180730_82/15329286640280Wu1t_JPEG/movie_image.jpg', 
+'기억하나요? 당신의 첫사랑<br>
+고3 여름, 전학생 ‘승희’를 보고 첫눈에 반한 ‘우연’.<br>
+승희를 졸졸 쫓아다닌 끝에 마침내 공식커플로 거듭나려던 그때! 잘 지내라는 전화 한 통만 남긴 채 승희는 사라져버리고,<br>
+우연의 첫사랑은 그렇게 막을 내리는 듯했다.<Br>
+ 1년 뒤, 승희의 흔적을 쫓아 끈질긴 노력으로 같은 대학에 합격한 우연.<br>
+ 그런데 그의 앞을 가로막은 건… 다름 아닌 그녀의 남.자.친.구!<br>
+ 예술로 빗나가는 타이밍 속 다사다난한 그들의 첫사랑 연대기는 계속된다!'); 
+ 
+ insert into `kimchi`.`actor`(`actor_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (아이디,이름, 출생, 사망, 설명) 순서 
+ (53,'박보영','1990년 2월 12일','',
+ '소속사: BH 엔터테인먼트 <br>
+학력: 단국대학교 공연영화학부 연극전공
+ 수상: 제 52회 백상예술대상 영화 여자연기상<br>
+		제36회 청룡영화상 인기스타상'),
+('54','김영광','1987년 1월 11일','',
+'소속사 : WIDE-S COMPANY <br>
+학력: 한양대학교 연극영화학
+수상: 제 55회 영화 남자신인연기상<br>
+	제 39회 청룡영화상 인기스타상');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_info`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+	
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(27, 53), # 너의 결혼식/박보영
+(27, 54); # 너의 결혼식 / 김영광
+
+insert into `kimchi`.`director`(`director_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+(26,'이석근','1972년','','
+작품: 영화 너의 결혼식(2019)<br>
+	영화 누가 예수를 죽였는가?(2003)<br>');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (27, 26); # 너의결혼식/이석근
+ #######
+ #######
+  insert into `kimchi`.`show_info`(`show_id`,`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+(28,'블랙머니', '범죄,드라마', '한국', '2019-11-13', 2019, '113분', 
+'https://movie-phinf.pstatic.net/20191113_203/1573610067050zNCj1_JPEG/movie_image.jpg', 
+'일명 서울지검 ‘막프로’! 검찰 내에서 거침없이 막 나가는 문제적 검사로<br>
+ 이름을 날리는 ‘양민혁’은 자신이 조사를 담당한 피의자가 자살하는 사건으로 인해<br>
+ 하루 아침에 벼랑 끝에 내몰린다. 억울한 누명을 벗기 위해 내막을 파헤치던 그는<br>
+ 피의자가 대한은행 헐값 매각사건의 중요 증인이었음을 알게 된다.<br><br>
+ 근거는 의문의 팩스 5장! 자산가치 70조 은행이 1조 7천억원에 넘어간<br>
+ 희대의 사건 앞에서 ‘양민혁’ 검사는 금융감독원, 대형 로펌, 해외펀드 회사가 뒤얽힌<br>
+ 거대한 금융 비리의 실체와 마주하게 되는데…<br>
+ 대한민국 최대의 금융스캔들, 사건은 아직 끝나지 않았다!'); 
+ 
+ insert into `kimchi`.`actor`(`actor_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (아이디,이름, 출생, 사망, 설명) 순서 
+ (55,'조진웅','1976년 4월 2일','',
+ '소속사: 사람 엔터테인먼트 <br>
+학력: 경성대학교 연극영화학과
+ 수상: 제 21회 부산영화평론가협회상 남자연기상<br>
+		제55회 대종상 남우주연상'),
+('56','이하늬','1983년 3월 2일','',
+'소속사 : 사람 엔터테인먼트 <br>
+학력: 이화여자대학교 대학원 국악학 박사 수료
+수상: 제 56회 대종상 영화제 여우조연상<br>
+	제 40회 청룡영화상 여우조연상');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_info`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+	
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(28, 55), # 블랙머니/조진웅
+(28, 56); # 블랙머니/이하늬
+
+insert into `kimchi`.`director`(`director_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+(27,'정지영','1946년 11월 19일','','
+학력: 고려대학교 불어불문학과<br>
+수상: 제 33회 청룡영화상 감독상<br>
+	제 12회 광주국제영화제 김대중노벨평화영화상');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (28, 27); # 블랙머니/정지영
+ #######
+  #######
+  insert into `kimchi`.`show_info`(`show_id`,`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
+values 
+# (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
+(29,'마션', '모험,액션', '미국,영국', '2015-10-08', 2015, '144분', 
+'https://movie-phinf.pstatic.net/20151014_112/1444802557577pCaPD_JPEG/movie_image.jpg', 
+'임무 중 모래폭풍을 만난 NASA 화성 탐사대. 동료대원 마크가 사망했다고 판단해 지구로 귀환한다.<br>
+하지만 마크는 기적적으로 살아나 화성에 홀로 남았다.<br>
+이대로 포기할까? 아니, 여기선 안 죽어.화성에서 살아남기, 이제 시작이다.'); 
+ 
+ insert into `kimchi`.`actor`(`actor_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (아이디,이름, 출생, 사망, 설명) 순서 
+ (57,'맷 데이먼','1970년 10월 8일','',
+ '수상: 제 73회 골든 글로브 시상식 남우주연상-뮤지컬코미디'),
+('58','제시카 차스테인','1977년 3월 24일','',
+'수상: 제 29회 팜스프링스 국제영화제 체어맨즈 어워드 수상');
+ 
+ 
+ 
+ /*
+	select * from `kimchi`.`show_info`;
+	select * from `kimchi`.`actor`;
+    select * from `kimchi`.`director`;
+	를 이용해 영화 번호(show_id)와 배우 번호(actor_id)를 매칭할것.
+ */
+	
+insert into `kimchi`.`show_actor`
+values
+# (`show_id`, `actor_id`) 순서
+(29, 57), # 마션/맷 데이먼
+(29, 58); # 마션/제시카 차스테인
+
+insert into `kimchi`.`director`(`director_id`,`name`,`birth`,`death`,`description`)
+ values
+ # (이름, 출생, 사망, 설명) 순서 
+(28,'리들리 스콧','1937년 11월 30일','','
+수상: 제 69회 미국 감독 조합상 공로상 수상');
+
+insert into `kimchi`.`show_director`
+ values
+ # (`show_id`, `director_id`) 순서
+ (29, 28); # 마션/리들리 스콧
+ #######
+##############################
+select * from `kimchi`.`show_info`;
+select * from `kimchi`.`actor`;
+select * from `kimchi`.`show_actor`;
+select * from `kimchi`.`director`;
+select * from `kimchi`.`show_director`;
+##############################
+
