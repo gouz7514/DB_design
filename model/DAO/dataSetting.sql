@@ -99,7 +99,7 @@ select * from `kimchi`.`show_director`;
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 2(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#도깨비', '드라마', '한국', '2016-12-02', 2016, '시즌 1개', 
+('도깨비', '드라마', '한국', '2016-12-02', 2016, '시즌 1개', 
 'http://img.lifestyler.co.kr/uploads/program/cheditor/2016/12/ABI5LVB6TBFE9TW45NUO_1024x0.jpg', 
 '신부를 찾아야 죽을 수 있는 남자.<br>
 불멸의 고통에 힘겹던 어느 날,<br>
@@ -152,7 +152,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 3(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#워킹데드', '드라마', '미국', '2010-10-31', 2010, '시즌 10개', 
+('워킹데드', '드라마', '미국', '2010-10-31', 2010, '시즌 10개', 
 'https://movie-phinf.pstatic.net/20130710_88/1373436319912tHuax_JPEG/movie_image.jpg', 
 '눈을 떠보니 세상은 좀비가 점령한 전쟁터.<br>
 어디로 갈 것인가, 어떻게 생존할 것인가.<br>
@@ -200,7 +200,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 4(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#마담싸이코', '스릴러', '미국', '2019-09-26', 2019, '98분', 
+('마담싸이코', '스릴러', '미국', '2019-09-26', 2019, '98분', 
 'https://movie-phinf.pstatic.net/20190607_99/1559869665680SMDNA_JPEG/movie_image.jpg', 
 '함부로 친절하지 말 것!<br>
 소름돋는 역대급 싸이코가 온다<br>
@@ -255,7 +255,7 @@ insert into `kimchi`.`show_director`
  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 5(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#군도:민란의시대', '액션', '한국', '2014-07-23', 2014, '137분', 
+('군도:민란의시대', '액션', '한국', '2014-07-23', 2014, '137분', 
 'https://movie-phinf.pstatic.net/20140627_105/1403832280951tgmxv_JPEG/movie_image.jpg', 
 '탐관오리의 횡포에 백성들의 고통이 극에 달했던 조선 후기.<br>
 세상을 뒤엎고자 한데 모인 의적의 무리가 있었으니...<br>
@@ -304,7 +304,7 @@ insert into `kimchi`.`show_director`
  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 6(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#재심', '드라마', '한국', '2017-02-15', 2017, '119분', 
+('재심', '드라마', '한국', '2017-02-15', 2017, '119분', 
 'https://movie-phinf.pstatic.net/20170206_116/1486347780659NI0zd_JPEG/movie_image.jpg', 
 '출세를 위해 맡은 사건.<br>
 파고들수록 잊고 살았던 정의감에 불을 지핀다.<br>
@@ -357,7 +357,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 7(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#신과함께-죄와벌', 'SF & 판타지', '한국', '2017-12-20', 2017, '139분', 
+('신과함께-죄와벌', 'SF & 판타지', '한국', '2017-12-20', 2017, '139분', 
 'https://movie-phinf.pstatic.net/20171201_181/1512109983114kcQVl_JPEG/movie_image.jpg', 
 '화재 현장에서 어린 소녀는 구했으나 자기 목숨은 지키지 못한 소방관.<br>
 그를 \'귀인\'이라 치켜세우는 차사들의 안내를 받아 저승에 도착한다.<br>
@@ -407,7 +407,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 8(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#기묘한이야기', '공포', '미국', '2016-07-15', 2016, '시즌 3개', 
+('기묘한이야기', '공포', '미국', '2016-07-15', 2016, '시즌 3개', 
 'http://ojsfile.ohmynews.com/PHT_IMG_FILE/2018/0319/IE002302766_PHT.jpg', 
 '인디애나주의 작은 마을에서 행방불명된 소년.<br>
 이와 함께 미스터리한 힘을 가진 소녀가 나타나고,<br>
@@ -449,7 +449,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 9(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#나르코스', '범죄', '미국', '2016-01-16', 2016, '시즌 3개', 
+('나르코스', '범죄', '미국', '2016-01-16', 2016, '시즌 3개', 
 'https://movie-phinf.pstatic.net/20170110_53/1484029743624WQd4Q_PNG/movie_image.jpg', 
 '콜롬비아의 에스코바르와 로스 페페스는 세계 최대의 <br>
 마약 제국을 건설하고 미국의 공공의 적이 된다.<br>
@@ -489,8 +489,10 @@ insert into `kimchi`.`show_director`
  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 10(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#위쳐', '판타지', '미국', '2019-12-20', 2019, '시즌 1개', 
-'https://dvdprime.com/g2/data/cheditor5/1912/mania-done-20191207161132_gvowfhym.jpg', 
+('위쳐', '판타지', '미국', '2019-12-20', 2019, '시즌 1개', 
+'https://url.kr/AeQ87w', 
+	#포스터 소스들이 전부 길어서 데이터 삽입이 되지 않아 url 길이 줄임
+	#원주소:https://dnm.nflximg.net/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABdc5Z29EM1NIz7veJHlLxTRu3lKyc3eGyhXX4UQ-lu19wTwgWZcq2oCo3WL3YZl0InxBOVmj_6B5zC3BypakjOQsFJUX8ieWRhHqV2FDOKulYRFg0r6yoh_WMXZnvA.jpg
 '세계적인 판타지 대작이 넷플릭스 시리즈로 다시 태어난다!<br>
 어둠과 위험의 세계, 진실은 어디에 있을까...<br>
 운명으로 묶인 그들. 위쳐와 마법사, 홀로 남은 공주의 싸움이 시작된다.'); 
@@ -528,7 +530,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 11(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#종이의집', '범죄', '스페인', '2017-05-02', 2017, '시즌 4개', 
+('종이의집', '범죄', '스페인', '2017-05-02', 2017, '시즌 4개', 
 'http://image.tmdb.org/t/p/w600_and_h900_bestv2/qylPAc1MAuXcebgJOS6RV8ZgHpi.jpg', 
 '1명의 천재, 8명의 공범, 철저히 준비한 세기의 강도.<br>
 스페인 조폐국에서 인질극까지 벌인 이들은 과연,<br>
@@ -566,7 +568,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 12(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#킹덤', '좀비', '한국', '2019-01-25', 2019, '시즌 2개', 
+('킹덤', '좀비', '한국', '2019-01-25', 2019, '시즌 2개', 
 'https://newsimg.sedaily.com/2018/12/03/1S8BKDEHSC_1.jpg', 
 '병든 왕을 둘러싸고 흉흉한 소문이 떠돈다.<br>
 어둠에 뒤덮인 조선, 기이한 역병에 신음하는 산하.<br>
@@ -612,7 +614,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 13(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#청년경찰', '액션', '한국', '2017-08-09', 2017, '109분', 
+('청년경찰', '액션', '한국', '2017-08-09', 2017, '109분', 
 'https://movie-phinf.pstatic.net/20170814_131/1502673994742txsKh_JPEG/movie_image.jpg', 
 '경찰대에서 동고동락하는 혈기왕성 청년 둘.<br>
 우연히 납치 사건을 목격하고 바로 신고한다.<br>
@@ -655,7 +657,7 @@ insert into `kimchi`.`show_director`
  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 14(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#건축학개론', '로맨스', '한국', '2012-03-22', 2012, '118분', 
+('건축학개론', '로맨스', '한국', '2012-03-22', 2012, '118분', 
 'https://movie-phinf.pstatic.net/20120227_164/1330332687398PQ1U3_JPEG/movie_image.jpg', 
 '서연과 승민은 건축학 개론 수업에서 만나 사랑에 빠졌었다.<br>
 서연이 승민을 찾아와 꿈에 그리던 집을 지어달라고 하고<br>
@@ -702,7 +704,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 15(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#옥자', '액션', '한국,미국', '2017-05-19', 2017, '120분', 
+('옥자', '액션', '한국,미국', '2017-05-19', 2017, '120분', 
 'https://movie-phinf.pstatic.net/20170904_126/1504516484057JACUa_JPEG/movie_image.jpg', 
 '거대하지만 온순한 짐승 \'옥자\'와 그녀를 키운 여자아이.<br>
 그 순수한 우정은 자신의 이익을 위해 다투는 동물 보호가들과<br>
@@ -752,7 +754,7 @@ insert into `kimchi`.`show_director`
  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 16(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#어스', '스릴러', '미국', '2019-03-27', 2019, '116분', 
+('어스', '스릴러', '미국', '2019-03-27', 2019, '116분', 
 'https://movie-phinf.pstatic.net/20190329_232/1553849027701K0DBy_JPEG/movie_image.jpg', 
 '해변으로 휴가를 온 가족. 엄마 애들레이드는 불안해진다.<br>
 어린 시절 섬뜩한 일이 벌어졌던 장소이기에.<br>
@@ -799,7 +801,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 17(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#신비한동물사전', '판타지', '영국,미국', '2016-11-16', 2016, '132분', 
+('신비한동물사전', '판타지', '영국,미국', '2016-11-16', 2016, '132분', 
 'https://movie-phinf.pstatic.net/20161116_257/1479273247499i8I0s_JPEG/movie_image.jpg', 
 '신비한 동물들을 가방에 넣고 다니는 괴짜 마법사 뉴트.<br>
 뉴욕에 도착하자마자 녀석들이 탈출을 감행한다.<br>
@@ -845,7 +847,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 18(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#인턴', '코미디', '미국', '2015-09-24', 2015, '121분', 
+('인턴', '코미디', '미국', '2015-09-24', 2015, '121분', 
 'https://movie-phinf.pstatic.net/20150910_279/1441866003899BJKw7_JPEG/movie_image.jpg', 
 '창업 1년 반 만에 직원 220명의 성공신화를 이룬 줄스.<br>
 TPO에 맞는 패션센스, 업무를 위해 사무실에서도 끊임 없는 체력관리,<br>
@@ -888,7 +890,7 @@ insert into `kimchi`.`show_director`
  insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 19(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#캣츠', '뮤지컬,가족', '미국,영국', '2019-12-24', 2019, '109분', 
+('캣츠', '뮤지컬,가족', '미국,영국', '2019-12-24', 2019, '109분', 
 'https://movie-phinf.pstatic.net/20191212_298/1576126327893wHnf5_JPEG/movie_image.jpg', 
 '앤드루 로이드 웨버가 만든 전설의 뮤지컬 \'캣츠\'가 스크린으로 찾아온다.<br>
 일 년에 한 번 열리는 젤리클 무도회.<br>
@@ -932,7 +934,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 20(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#센과치히로의행방불명', '애니메이션', '일본', '2002-06-28', 2002, '126분', 
+('센과치히로의행방불명', '애니메이션', '일본', '2002-06-28', 2002, '126분', 
 'https://movie-phinf.pstatic.net/20150113_96/1421113909808LPjqA_JPEG/movie_image.jpg', 
 '금지된 세계의 문이 열렸다!<br>
 <br>
@@ -976,7 +978,7 @@ insert into `kimchi`.`show_director`
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 21(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
-('#사자', '액션,어드벤처', '한국', '2019-07-31', 2019, '129분', 
+('사자', '액션,어드벤처', '한국', '2019-07-31', 2019, '129분', 
 'https://movie-phinf.pstatic.net/20190625_168/1561426986010A3uBi_JPEG/movie_image.jpg', 
 '어릴 때 아버지를 여읜 후 세상에서 등을 돌린 MMA 챔피언.<br>
 손바닥에 원인불명의 깊은 상처가 생기자 구마 사제를 찾아간다.<br>
