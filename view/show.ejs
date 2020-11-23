@@ -33,11 +33,17 @@
         </ul>
       </div>
     <div class="body-content">
+      <form action="/show" method="post">
+        <span class="search-content">
+            <input type="text" class="search-box search-movie" placeholder="영화 명을 입력하세요."> 
+            <button type="submit">검색</button>
+        </span>
+      </form> 
       <table class="table-movie">
         <tr>
           <%for(var i in info){%>
           <td><a href="/show/<%=info[i].show_id%>"><img class="table-movie-content" src="<%=info[i].poster%>"><%=info[i].title%></td></a>
-            <%if (i==3){%>
+            <%if (i==3 || i==7 || i==11 || i==15){%>
               </tr>
               <tr>
             <%}%>

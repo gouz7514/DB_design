@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>로그인</title>
-  <link rel="stylesheet" href="css/sign-login.css">
+  <link rel="stylesheet" href="css/cast-profile.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -28,18 +28,36 @@
   
   <div class="menu">
     <ul class="select-menu">
-      <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+      <a class="select-menu-detail" href="/show"><li>작품</li></a>
       <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
     </ul>
+    <div class="cast-profile-form">
+      <h2 class="cast-profile-form-title">
+          프로필
+      </h2>
+      <div class="cast-profile-form-content">
+          <table class="cast-profile table">
+              <tr class="cast-profile table-row">
+                  <td class="cast-profile rowname">이름</td>
+                  <td class="cast-profile cast-name"><%=profileInfo.name%></td>
+              </tr>
+              <tr class="cast-profile table-row">
+                  <td class="cast-profile rowname">출생</td>
+                  <td class="cast-profile cast-birth"><%=profileInfo.birth%></td>
+              </tr>
+              <tr class="cast-profile table-row">
+                  <td class="cast-profile rowname">사망</td>
+                  <td class="cast-profile cast-death"><%=profileInfo.death%></td>
+              </tr>
+              <tr class="cast-profile table-row">
+                  <td class="cast-profile rowname">설명</td>
+                  <td class="cast-profile cast-description">
+                    <%-profileInfo.description%>
+                  </td>
+              </tr>
+          </table>
+      </div>
   </div>
-            프로필 임시 페이지<br>
-            이름 : <%=profileInfo.name%><br>
-            출생 : <%=profileInfo.birth%><br>
-            사망 : <%=profileInfo.death%><br>
-            <br>
-            설명<br>
-            <%-profileInfo.description%>
-    </div>
   </div>
 </div>
 <footer>

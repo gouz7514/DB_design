@@ -9,6 +9,14 @@ var infoDAO = {
         })
     },
 
+    getShowBrief20 : (callback) => {
+        var sql = 'select show_id, title, poster from kimchi.show_info order by data_added desc limit 20'
+        con.query(sql, function(err,result){
+            if(err) return callback(err)
+            callback(null, result)
+        })
+    },
+
     getShowInfo : (param, callback) => {
         var sql = 'select * from kimchi.show_info where show_id = ?'
         con.query(sql, param, function(err,result){

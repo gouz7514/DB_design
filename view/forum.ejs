@@ -28,7 +28,7 @@
   <div class="body">
     <div class="menu">
       <ul class="select-menu">
-        <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+        <a class="select-menu-detail" href="/show"><li>작품</li></a>
         <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
       </ul>
     </div>
@@ -36,7 +36,7 @@
     <div class="body-content">
     <!-- login한 유저만 글쓰기 가능 -->
     <% if(user){ %>
-      <button type="submit" class="button-forum-write" onclick="location.href='/forum/write'">
+      <button class="button-forum-write" onclick="location.href='/forum/write'">
         <span>게시글 쓰기</span>
       </button>
     <% } %>  

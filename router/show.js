@@ -4,6 +4,13 @@ var router = express.Router()
 
 router.use(express.static('public'))
 
+router.get('/', (req, res, next) => {
+    infoDAO.getShowBrief20((err, showInfo)=>{
+        if(err) return next(err) 
+          res.render('show', {info : showInfo}) 
+      })
+})
+
 router.get('/:showId', (req, res, next) => {
     infoDAO.getShowInfo(parseInt(req.params.showId), (err, showInfo)=>{
         if(err) return next(err) 

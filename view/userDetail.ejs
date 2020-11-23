@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>로그인</title>
-  <link rel="stylesheet" href="css/sign-login.css">
+  <link rel="stylesheet" href="css/user-detail.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -28,32 +28,56 @@
   
   <div class="menu">
     <ul class="select-menu">
-      <a class="select-menu-detail" href="menu-movie.html"><li>작품</li></a>
+      <a class="select-menu-detail" href="/show"><li>작품</li></a>
       <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
     </ul>
   </div>
-    <div class="log-in-form">
-        <h1><%=user.name%>님의 회원정보</h1>
-        <form action="/user/modify?no=<%=userDetail.no%>" method="POST">
-            <p>
-                id : <input type="text" name="id" value="<%=userDetail.id%>" disabled>
-            </p>
-            <p>
-                pw : <input type="password" name="pw" value="<%=userDetail.pw%>">
-            </p>
-            <p>
-                name : <input type="text" name="name" value="<%=userDetail.name%>">
-            </p>
-            <p>
-              <!-- session의 user.id와 현재 페이지의 id가 같은 경우에만 버튼 보이도록 설정 -->
-                <% if(user.id === userDetail.id){ %>
-                    <button id="modify_btn" type="submit" disabled>수정</button>
-                    <button id="delete_btn" type="button" disabled>삭제</button>
-                <% } %>
-                <!-- 현재 disabled로 막아둠 -->
-            </p>
-        </form>
+  <div class="user-detail-form">
+    <h2 class="user-detail-form-title">
+      <%=userDetail.name%>님의 회원정보
+    </h2>
+    <div class="user-detail-form-content">
+      <form action="/user/modify?no=<%=userDetail.no%>" method="POST"></form>
+        <table class="user-detail table">
+            <tr class="user-detail table-row">
+                <td class="user-detail rowname">아이디</td>
+                <td>
+                  <input class="user-detail user-id" type="text" name="id" value="<%=userDetail.id%>" disabled>
+                </td>
+            </tr>
+            <tr class="user-detail table-row">
+                <td class="user-detail rowname">비밀번호</td>
+                <td>
+                  <input class="user-detail user-pw" type="password" name="pw" value="<%=userDetail.pw%>">
+                </td>
+            </tr>
+            <tr class="user-detail table-row">
+                <td class="user-detail rowname">이름</td>
+                <td>
+                  <input class="user-detail user-name" type="text" name="name" value="<%=userDetail.name%>">
+                </td>
+            </tr>
+            <tr class="user-detail table-row">
+                <td class="user-detail rowname">이메일</td>
+                <td>
+                  <input class="user-detail user-email" type="text" name="email" value="<%=userDetail.email%>">
+                </td>
+            </tr>
+            <tr class="user-detail table-row">
+                <td class="user-detail rowname">닉네임</td>
+                <td>
+                  <input class="user-detail user-nickname" type="text" name="nickname" value="<%=userDetail.nickname%>">
+                </td>
+            </tr>
+        </table>
+        <!-- session의 user.id와 현재 페이지의 id가 같은 경우에만 버튼 보이도록 설정 -->
+        <% if(user.id === userDetail.id){ %>
+          <button class="user-detail modify-btn" id="modify_btn" type="submit">수정</button>
+          <button class="user-detail delete-btn" id="delete_btn" type="button">삭제</button>
+        <% } %>
+      </form>
     </div>
+</div>
   </div>
 </div>
 <footer>

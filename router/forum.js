@@ -16,14 +16,14 @@ router.get('/', function (req, res) {
     res.render('forum')
 });
 
-router.get('/:id', function (req, res) {
-    res.render('forum')
-});
-
 router.get('/write', function (req, res) {
     res.render('forum_write')
 });
 
+router.post('/write/upload', function (req, res, next) {
+    console.log(req.body)
+    res.render('forum_write')
+});
 
 
 module.exports = router
