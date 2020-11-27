@@ -1,10 +1,9 @@
 .forum-detail-form {
-    margin: 30px auto;
+    margin: 10px auto;
     border: 1px solid #D1D1D1;
     width: 50%;
     background-color: black;
     color: white;
-    opacity: 0.9;
     border-radius: 4px;
     height: 60vh;
 }
@@ -36,7 +35,7 @@
 .upvote {
     text-align: center;
 }
-.upvote-btn {
+.upvote-btn, .comment-btn {
     background-color: #e50914;
     color: #fff;
     padding: 7px 7px;
@@ -44,16 +43,31 @@
     font-weight: 600;
     border-radius: 8px;
 }
+.write-comment {
+    margin: 10px auto;
+    border: 1px solid #D1D1D1;
+    width: 50%;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.write-comment-title, .write-comment-textarea {
+    padding: 10px;
+}
+.comment-btn-box {
+    text-align: center;
+    margin-bottom: 10px;
+}
 .comment-id {
     width: 100px;
 }
 .comment-table {
-    margin: 30px auto;
+    margin: 10px auto;
     padding: 5px;
     border: 1px solid #D1D1D1;
     width: 50%;
     background-color: black;
     color: white;
-    opacity: 0.9;
     border-radius: 4px;
 }
