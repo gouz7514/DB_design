@@ -29,20 +29,20 @@
     <div class="menu">
       <ul class="select-menu">
         <a class="select-menu-detail" href="/show"><li>작품</li></a>
-        <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
+        <a class="select-menu-detail" href="/forum?page=1"><li>게시판</li></a>
       </ul>
     </div>
 
     <div class="body-content">
       <div class="forum-write-form">
-          <form action="/forum/write/upload" method="post">
+          <form action="/forum/write" method="post">
           <div class="forum-write-content">
               <div class="forum-write-row">
                   <h3 class="forum-write-row-title">
                       제목
                   </h3>
                   <span class="forum-title-input-box">
-                      <input type="text" class="input-box" placeholder="제목의 길이는 최대 20자 입니다.">
+                      <input type="text" class="input-box" placeholder="제목의 길이는 최대 20자 입니다." name='title'>
                   </span>
               </div>
               <div class="forum-write-row">
@@ -50,7 +50,7 @@
                     작품명
                  </h3>
                  <span class="forum-id-input-box">
-                     <input type="text" class="input-box">
+                     <input type="text" class="input-box" name='show_name'>
                  </span>
               </div>
               <div class="forum-write-row">
@@ -58,7 +58,7 @@
                     내용
                  </h3>
                  <span class="forum-content-input-box">
-                     <textarea cols="30" rows="30">
+                     <textarea cols="30" rows="30" name='body'>
 
                      </textarea>
                  </span>
@@ -66,7 +66,28 @@
               </div>
               <div class="forum-write-row">
                  <h3 class="forum-write-row-title">
-                    평점
+                  <div class="startRadio">
+                    <label class="startRadio__box">
+                      <input type="radio" name="rating" value="1">
+                      <span class="blind">★</span>
+                    </label>
+                    <label class="startRadio__box">
+                      <input type="radio" name="rating" value="2">
+                      <span class="blind">★★</span>
+                    </label>
+                    <label class="startRadio__box">
+                      <input type="radio" name="rating" value="3">
+                      <span class="blind">★★★</span>
+                    </label>
+                    <label class="startRadio__box">
+                      <input type="radio" name="rating" value="4">
+                      <span class="blind">★★★★</span>
+                    </label>
+                    <label class="startRadio__box">
+                      <input type="radio" name="rating" value="5">
+                      <span class="blind">★★★★★</span>
+                    </label>
+                  </div>
                  </h3>
                   
               </div>

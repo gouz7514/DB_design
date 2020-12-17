@@ -14,12 +14,12 @@ router.get('/', (req, res, next) => {
 router.get('/:showId', (req, res, next) => {
     infoDAO.getShowInfo(parseInt(req.params.showId), (err, showInfo)=>{
         if(err) return next(err) 
-        //console.log(showInfo)
+        console.log(showInfo)
         infoDAO.getShowActor(parseInt(req.params.showId), (err, actorInfo)=>{
             if(err) return next(err) 
             infoDAO.getShowDirector(parseInt(req.params.showId), (err, directorInfo)=>{
                 if(err) return next(err) 
-                //console.log(actorInfo[0], directorInfo[0])
+                console.log(actorInfo[0], directorInfo[0])
 
                 showData = {
                     show_id : showInfo.show_id,

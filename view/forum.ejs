@@ -29,7 +29,7 @@
     <div class="menu">
       <ul class="select-menu">
         <a class="select-menu-detail" href="/show"><li>작품</li></a>
-        <a class="select-menu-detail" href="/forum"><li>게시판</li></a>
+        <a class="select-menu-detail" href="/forum?page=1"><li>게시판</li></a>
       </ul>
     </div>
 
@@ -45,22 +45,33 @@
           <th>게시글 No</th>
           <th>작성자</th>
           <th>제목</th>
-          <th>내용</th>
           <th>작품</th>
           <th>평점</th>
         </tr>
-        <tr class="table-forum-content">
-          <td>1</td>
-          <td>김아무개</td>
-          <td>개꿀잼</td>
-          <td>영화 재미있어요</td>
-          <td>킹덤</td>
-          <td>⭐⭐⭐⭐⭐</td>
-        </tr>
+        <%for(var i in article){%>
+        
+          <tr class="table-forum-content" >
+            <td><%=article[i].article_no%></td>
+            <td><a href="/user/detail?id=<%=article[i].user_id%>"><%=article[i].user_id%></a></td>
+            <td><a href="/forum/view?article=<%=article[i].article_no%>"><%=article[i].a_title%></a></td>
+            <td><a href="/show/<%=article[i].show_id%>"><%=article[i].s_title%></a></td>
+            <td>
+              <% loop = article[i].rt %>
+              <% for(var i = 0; i < loop; i ++){ %>
+                ⭐
+              <%}%>
+            </td>
+          </tr>
+        <%}%>
       </table>
-      <span class="search-content">
-        <input type="text" class="search-box search-forum" placeholder="게시글 제목을 입력하세요.">
-      </span>
+      <form action="/forum/search" method="post"></form>
+        <span class="search-content">
+          <input type="text" name='target' class="search-box search-forum" placeholder="게시글 제목을 입력하세요.">
+          <button class="button-forum-write" type='submit'>
+            <span>찾기</span>
+          </button>
+        </span>
+      </form>
     </div>
   </div>
 

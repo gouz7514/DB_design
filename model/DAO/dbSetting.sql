@@ -17,6 +17,8 @@
 DROP DATABASE IF EXISTS `kimchi`;
 CREATE DATABASE `kimchi`;
 
+USE `kimchi`;
+
 # create user table
 DROP TABLE IF EXISTS `kimchi`.`user`;
 CREATE TABLE `kimchi`.`user` (
@@ -62,7 +64,7 @@ CREATE TABLE `kimchi`.`director` (
   `death` VARCHAR(20) NULL,
   `description` TEXT NULL,
   PRIMARY KEY (`director_id`),
-  UNIQUE INDEX `director_id_UNIQUE` (`director_id` ASC));
+  UNIQUE INDEX `director_id_UNIQUE` (`director_id` ASC))ENGINE=InnoDB AUTO_INCREMENT=0;
   
 # create director table
 DROP TABLE IF EXISTS `kimchi`.`actor`;
@@ -73,32 +75,32 @@ CREATE TABLE `kimchi`.`actor` (
   `death` VARCHAR(20) NULL,
   `description` TEXT NULL,
   PRIMARY KEY (`actor_id`),
-  UNIQUE INDEX `actor_id_UNIQUE` (`actor_id` ASC));
+  UNIQUE INDEX `actor_id_UNIQUE` (`actor_id` ASC))ENGINE=InnoDB AUTO_INCREMENT=0;
   
 # create director relation table
 DROP TABLE IF EXISTS `kimchi`.`show_director`;
 CREATE TABLE `kimchi`.`show_director` (
   `show_id` INT NOT NULL,
-  `director_id` INT NOT NULL,
+  `director_id` INT NOT NULL default 0,
   PRIMARY KEY (`show_id`,`director_id`),
   CONSTRAINT `FK_SHOW_ID_SHOWDIRECTOR`
     FOREIGN KEY (`show_id`) REFERENCES `kimchi`.`show_info` (`show_id`)
 		ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_DIRECTOR_ID_SHOWDIRECTOR`
-    FOREIGN KEY (`director_id`) REFERENCES `kimchi`.`director` (`director_id`)
+    FOREIGN KEY (`director_id`) REFERENCES `kimchi`.`director`(`director_id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
 
 # create actor relation table
 DROP TABLE IF EXISTS `kimchi`.`show_actor`;
 CREATE TABLE `kimchi`.`show_actor` (
   `show_id` INT NOT NULL,
-  `actor_id` INT NOT NULL,
+  `actor_id` INT NOT NULL default 0,
   PRIMARY KEY (`show_id`,`actor_id`),
   CONSTRAINT `FK_SHOW_ID_SHOWACTOR`
-    FOREIGN KEY (`show_id`) REFERENCES `kimchi`.`show_info` (`show_id`)
+    FOREIGN KEY (`show_id`) REFERENCES `kimchi`.`show_info`(`show_id`)
 		ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_ACTOR_ID_SHOWACTOR`
-    FOREIGN KEY (`actor_id`) REFERENCES `kimchi`.`actor` (`actor_id`)
+    FOREIGN KEY (`actor_id`) REFERENCES `kimchi`.`actor`(`actor_id`)
 		ON DELETE CASCADE ON UPDATE CASCADE);
 
 # create board table
@@ -148,3 +150,14 @@ CREATE TABLE `kimchi`.`like` (
 		ON DELETE CASCADE ON UPDATE CASCADE);
         
 
+DROP PROCEDURE IF EXISTS SearchWithTitle;
+DELIMITER //
+ CREATE PROCEDURE SearchWithTitle(IN str VARCHAR(100))
+   BEGIN
+	SELECT `article_no`, `title`, `user_id`
+    FROM `kimchi`.`board` 
+    WHERE `show_id` IN (SELECT `show_id` 
+						FROM `kimchi`.`show_info` 
+						WHERE `title` LIKE str);
+   END //
+DELIMITER ;

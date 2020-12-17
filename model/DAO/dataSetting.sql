@@ -26,6 +26,8 @@
 	* comment :  더미 데이터 삽입 참고 작성    
 	*********************************/ 
 
+use `kimchi`;
+
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
@@ -490,7 +492,7 @@ insert into `kimchi`.`show_director`
 values 
 # 10(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
 ('위쳐', '판타지', '미국', '2019-12-20', 2019, '시즌 1개', 
-'https://url.kr/AeQ87w', 
+'img/위쳐.jpg', 
 	#포스터 소스들이 전부 길어서 데이터 삽입이 되지 않아 url 길이 줄임
 	#원주소:https://dnm.nflximg.net/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABdc5Z29EM1NIz7veJHlLxTRu3lKyc3eGyhXX4UQ-lu19wTwgWZcq2oCo3WL3YZl0InxBOVmj_6B5zC3BypakjOQsFJUX8ieWRhHqV2FDOKulYRFg0r6yoh_WMXZnvA.jpg
 '세계적인 판타지 대작이 넷플릭스 시리즈로 다시 태어난다!<br>
@@ -1425,4 +1427,3 @@ select * from `kimchi`.`show_actor`;
 select * from `kimchi`.`director`;
 select * from `kimchi`.`show_director`;
 ##############################
-
