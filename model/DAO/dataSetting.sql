@@ -1419,7 +1419,28 @@ insert into `kimchi`.`show_director`
  values
  # (`show_id`, `director_id`) 순서
  (29, 28); # 마션/리들리 스콧
+ 
+ insert into `kimchi`.`board`(`show_id`, `user_id`, `title`, `body`, `rating`)
+ values
+(1, 'admin', '테스트용 게시글입니다.',
+'테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>',5.0),
+(1, 'admin', '테스트용 게시글입니다.',
+'테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>',5.0);
+
+insert into `kimchi`.`comment`(`user_id`, `article_no`, `comment`)
+values
+('admin',1,'테스트 댓글입니다.'),
+('admin',2,'테스트 댓글입니다.');
  #######
+
 ##############################
 select * from `kimchi`.`show_info`;
 select * from `kimchi`.`actor`;
@@ -1427,3 +1448,12 @@ select * from `kimchi`.`show_actor`;
 select * from `kimchi`.`director`;
 select * from `kimchi`.`show_director`;
 ##############################
+select article_no, b.title, user_id, s.title, rating
+from kimchi.board b 
+join kimchi.show_info s 
+on b.show_id = s.show_id 
+limit 0, 10;
+
+
+select * from kimchi.comment;
+select * from kimchi.board;

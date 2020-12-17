@@ -29,16 +29,26 @@ router.post('/write', (req, res, next) => {
     res.render('forum')
 });
 
-router.get('/view', function (req, res) {
+router.get('/view', function (req, res, next) {
     console.log(req.query)
     forumDAO.getArticle(parseInt(req.query.article), (err, articleData)=>{
+        if(err) return next(err) 
         console.log(articleData)
-        res.render('forum_detail', {data : articleData})
+        forumDAO.getComment(parseInt(req.query.article), (err, comment)=>{
+            if(err) return next(err) 
+            console.log(comment)
+            res.render('forum_detail', {data : articleData, comment : comment})         
+        })
     })
 });
 
-router.post('/comment', function (req, res) {
-    console.log(req.query)
+router.post('/comment', function (req, res, next) {
+    param = [req.body.user_id, parseInt(req.body.article_no), req.body.comment]
+    forumDAO.insertComment(param, (err, result)=>{
+        if(err) return next(err) 
+        console.log(result)
+        res.redirect('/forum/view'+'?article='+req.body.article_no)
+    })
 })
 
 router.post('/write/upload', function (req, res, next) {
