@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>게시판</title>
+  <link rel="stylesheet" href="css/forum-detail.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <div class="title-container">
+    <!-- login 여부 확인해서 선택적으로 보여준다. -->
+    <span class="sign-member">   
+      <% if(user){ %>
+        <a class="authLink" href="/user/detail?id=<%=user.id%>"><%=user.name%> 님</a>
+          <a class="authLink" href="/user/logout">로그아웃</a>
+      <% }else{ %>
+          <a class="authLink" href="/user/sign_up">회원가입</a>
+          <a class="authLink" href="/user/login">로그인</a>
+      <% } %>   
+    </span>
+  <div class="title-background">
+    <h1 class="title-content">
+      <a href="/"><img class="title-logo" src="img/scene_kimchi_logo.png" alt="씬김치 로고"></a>
+    </h1>
+  </div>
+  </div>
+
+  <div class="body">
+    <div class="menu">
+      <ul class="select-menu">
+        <a class="select-menu-detail" href="/show"><li>작품</li></a>
+        <a class="select-menu-detail" href="/forum?page=1"><li>게시판</li></a>
+      </ul>
+    </div>
+    <div class="forum-detail-form">
+        <div class="forum-detail-form-content">
+        <table class="forum-detail table">
+            <tr class="forum-detail table-row">
+                <td class="forum-detail rowname">제목</td>
+                <td class="forum-detail forum-title"><%=data.title%></td>
+            </tr>
+            <tr class="forum-detail table-row">
+                <td class="forum-detail rowname">작성자</td>
+                <td class="forum-detail forum-writer"><%=data.user_id%></td>
+            </tr>
+        </table>
+        <span class="forum-detail content-title">내용</span>
+        <p class="forum-detail content-detail">
+          <%-data.body%>
+        </p>
+        <div class="forum-detail upvote">
+            <div class="forum-detail upvote-number">추천 개수
+            <button class="forum-detail upvote-btn" type="submit">추천하기</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <%if(user){%>
+    <form action="/forum/comment" method="post">
+      <div class="forum-detail write-comment">
+        <div class="forum-detail write-comment-title">댓글 쓰기</div>
+        <div class="forum-detail write-comment-textarea">
+          <textarea name='comment' class="forum-detail write-comment-detail" cols="75" rows="3"></textarea>
+        </div>
+        <input name='article_no' hidden value='<%=data.article_no%>'></input>
+        <input name='user_id' hidden value='<%=user.id%>'></input>
+        <div class="forum-detail comment-btn-box">
+          <button type='submit' class="forum-detail comment-btn">댓글 등록</button>
+        </div>
+      </div>
+    </form>
+    <% } %> 
+    
+    <table class="forum-detail comment-table">
+      <%for(var i in comment){%>
+        <tr class="forum-detail comment-row">
+            <td class="forum-detail comment-id"><%=comment[i].user_id%></td>
+            <td class="forum-detail comment-detail"><%=comment[i].comment%></td>
+        </tr>
+      <% } %> 
+    </table>
+</div>
+<footer>
+  Created by<br>
+  김영훈, 김학재, 남호철, 안석진, 윤지아<br>
+</footer>
+
+</body>
+</html>
