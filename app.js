@@ -48,7 +48,7 @@ app.set('views', path.join(__dirname, 'view'))
 app.set('view engine', 'ejs');
 
 //기본페이지는 index
-app.get('/', function (req, res) {
+app.get('/', function (req, res, next) {
     infoDAO.getShowBrief((err, showInfo)=>{
       if(err) return next(err) 
         res.render('index', {info : showInfo})  //render 해서 index에서 받아가도록      
