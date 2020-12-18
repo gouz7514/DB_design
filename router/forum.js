@@ -51,6 +51,25 @@ router.post('/comment', function (req, res, next) {
     })
 })
 
+router.post('/upvote', function (req, res, next) {
+    param = [req.body.user_id, parseInt(req.body.article_no)]
+    forumDAO.checkLike(param, (err, result)=>{
+        if(err) return next(err) 
+        if(result.result == 0){
+            forumDAO.addLike(param, (err, result)=>{
+                if(err) return next(err) 
+                console.log(result)
+            })
+        } else{
+            forumDAO.deleteLike(param, (err, result)=>{
+                if(err) return next(err)
+                console.log(result) 
+            })
+        }
+        res.redirect('/forum/view'+'?article='+req.body.article_no)
+    })
+})
+
 router.post('/write/upload', function (req, res, next) {
     console.log(req.body)
     res.render('forum_write')

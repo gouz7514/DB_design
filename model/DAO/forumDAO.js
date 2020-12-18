@@ -10,10 +10,14 @@ var forumDAO = {
     },
 
     getArticleMeta : (param, callback) => {
-        var sql = `select article_no, b.title as a_title, user_id, s.title as s_title, rating as rt, s.show_id as show_id
+        var sql = `select article_no, b.title as a_title, 
+                            user_id, 
+                            s.title as s_title, 
+                            rating as rt, 
+                            s.show_id as show_id
                     from kimchi.board b 
-                    join kimchi.show_info s 
-                    on b.show_id = s.show_id 
+                        join kimchi.show_info s 
+                            on b.show_id = s.show_id 
                     limit ?, 10`
         con.query(sql, param, function(err,result){
             if(err) return callback(err)
@@ -37,7 +41,6 @@ var forumDAO = {
         })
     },
 
-
     searchWithString : (param, callback) => {
         param = '%' + param + '%'
         console.log('Searching title contain : ' + param)
@@ -56,5 +59,28 @@ var forumDAO = {
         })
     },
 
+    addLike : (param, callback) => {
+        var sql = 'CALL AddLike(?, ?)'
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result)
+        })
+    },
+
+    deleteLike : (param, callback) => {
+        var sql = 'CALL DeleteLike(?, ?)'
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result)
+        })
+    },
+    
+    checkLike : (param, callback) => {
+        var sql = 'select count(user_id) as result from kimchi.like where user_id=? and article_no = ?'
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result[0])
+        })
+    },
 }
 module.exports = forumDAO;

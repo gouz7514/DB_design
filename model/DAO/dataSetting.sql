@@ -1420,7 +1420,7 @@ insert into `kimchi`.`show_director`
  # (`show_id`, `director_id`) 순서
  (29, 28); # 마션/리들리 스콧
  
- insert into `kimchi`.`board`(`show_id`, `user_id`, `title`, `body`, `rating`)
+ insert into `kimchi`.`board`(`show_id`, `user_id`, `title`, `body`, `rating`, `like`)
  values
 (1, 'admin', '테스트용 게시글입니다.',
 '테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
@@ -1433,12 +1433,18 @@ insert into `kimchi`.`show_director`
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
-테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>',5.0);
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>',5.0, 2);
 
 insert into `kimchi`.`comment`(`user_id`, `article_no`, `comment`)
 values
 ('admin',1,'테스트 댓글입니다.'),
 ('admin',2,'테스트 댓글입니다.');
+
+insert into `kimchi`.`like`
+values
+(2, 'admin'),
+(2, 'user');
+
  #######
 
 ##############################
@@ -1457,3 +1463,5 @@ limit 0, 10;
 
 select * from kimchi.comment;
 select * from kimchi.board;
+
+select count(user_id) from kimchi.like where user_id='admin' and article_no = 3;

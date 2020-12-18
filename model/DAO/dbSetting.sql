@@ -161,3 +161,40 @@ DELIMITER //
 						WHERE `title` LIKE str);
    END //
 DELIMITER ;
+
+DROP PROCEDURE IF EXISTS DeleteLike;
+DELIMITER //
+ CREATE PROCEDURE DeleteLike(IN uid VARCHAR(15), IN ano INT)
+   BEGIN
+	DECLARE err INT default '0'; 
+    DECLARE continue handler for SQLEXCEPTION set err = -1; 
+    
+    START TRANSACTION;
+		DELETE FROM `kimchi`.`like` WHERE article_no = ano AND user_id = uid; 
+		UPDATE `kimchi`.`board` SET `like` = `like` - 1 WHERE article_no = ano;
+	IF err < 0 THEN 
+		ROLLBACK; 
+	ELSE 
+		COMMIT; 
+	END IF;
+   END //
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS AddLike;
+DELIMITER //
+ CREATE PROCEDURE AddLike(IN uid VARCHAR(15), IN ano INT)
+   BEGIN
+	DECLARE err INT default '0'; 
+    DECLARE continue handler for SQLEXCEPTION set err = -1; 
+
+    START TRANSACTION;
+		INSERT INTO `kimchi`.`like` VALUES (ano, uid); 
+		UPDATE `kimchi`.`board` SET `like` = `like` + 1 WHERE article_no = ano;
+	IF err < 0 THEN 
+		ROLLBACK; 
+	ELSE 
+		COMMIT; 
+	END IF;
+   END //
+DELIMITER ;
+

@@ -48,10 +48,16 @@
           <p class="forum-detail content-detail">
             <%-data.body%>
           </p>
-          <div class="forum-detail upvote">
-            <div class="forum-detail upvote-number">추천 개수</div>
-            <button class="forum-detail upvote-btn" type="submit">추천하기</button>
-          </div>
+            <form action="/forum/upvote" method="post">
+              <div class="forum-detail upvote">
+                <input name='article_no' hidden value='<%=data.article_no%>'></input>
+                <input name='user_id' hidden value='<%=user.id%>'></input>
+                <div class="forum-detail upvote-number">추천수 : <%=data.like%></div>
+                <%if(user){%>
+                <button class="forum-detail upvote-btn" type="submit">추천하기</button>
+                <% } %> 
+              </div>
+            </form>
         </div>
     </div>
     <%if(user){%>
