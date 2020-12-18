@@ -34,7 +34,7 @@
     </div>
     <div class="forum-detail-form">
         <div class="forum-detail-form-content">
-        <table class="forum-detail table">
+          <table class="forum-detail table">
             <tr class="forum-detail table-row">
                 <td class="forum-detail rowname">제목</td>
                 <td class="forum-detail forum-title"><%=data.title%></td>
@@ -43,16 +43,15 @@
                 <td class="forum-detail rowname">작성자</td>
                 <td class="forum-detail forum-writer"><%=data.user_id%></td>
             </tr>
-        </table>
-        <span class="forum-detail content-title">내용</span>
-        <p class="forum-detail content-detail">
-          <%-data.body%>
-        </p>
-        <div class="forum-detail upvote">
-            <div class="forum-detail upvote-number">추천 개수
+          </table>
+          <span class="forum-detail content-title">내용</span>
+          <p class="forum-detail content-detail">
+            <%-data.body%>
+          </p>
+          <div class="forum-detail upvote">
+            <div class="forum-detail upvote-number">추천 개수</div>
             <button class="forum-detail upvote-btn" type="submit">추천하기</button>
           </div>
-        </div>
         </div>
     </div>
     <%if(user){%>

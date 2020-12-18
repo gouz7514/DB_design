@@ -5,7 +5,7 @@
     background-color: black;
     color: white;
     border-radius: 4px;
-    height: 60vh;
+    height: 100%;
 }
 .forum-detail-form-content {
     margin: 20px;
@@ -61,6 +61,8 @@
 }
 .comment-id {
     width: 100px;
+    text-align: center;
+    font-weight: bold;
 }
 .comment-table {
     margin: 10px auto;
