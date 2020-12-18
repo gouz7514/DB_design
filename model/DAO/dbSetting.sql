@@ -7,10 +7,16 @@
 *  MySQL based Scheme design   
 ********************************/
 /********************************
-* edit by :                      
-* date    :                      
-* email   :                      
-* comment :                      
+* edit by : 남호철                     
+* date    : 2020.12.17                     
+* email   : nhc616@gmail.com                      
+* comment : 저장 프로시저 SearchWithTitle 생성                     
+*********************************/ 
+/********************************
+* edit by : 남호철                     
+* date    : 2020.12.18                     
+* email   : nhc616@gmail.com                      
+* comment : 좋아요 기능을 위한 저장 프로시저 생성                     
 *********************************/ 
 
 # Create Schema for project

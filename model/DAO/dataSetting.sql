@@ -7,11 +7,26 @@
 *  dummy data insert script   
 ********************************/
 /********************************
-* edit by :                      
-* date    :                      
-* email   :                      
-* comment :                      
+* edit by :  윤지아           
+* date    :  2020.11.21                
+* email   :  sjsmja@naver.com      
+* comment :  더미 데이터 생성    
+*********************************/  
+/********************************
+* edit by : 안석진             
+* date    : 2020.11.22                     
+* email   : jeany980224@naver.com                     
+* comment : 더미데이터 생성                     
 *********************************/ 
+/********************************
+* edit by : 남호철                     
+* date    : 2020.12.18                     
+* email   : nhc616@gmail.com                      
+* comment : 게시판 테스트를 위한 샘플 데이터 삽입 및 필요없는 테스트용 select문 삭제                    
+*********************************/ 
+
+
+
 # 같은 파일에서 작업하기 때문에 항상 git pull 먼저 받고 작업할것
 # 동시에 같은 파일을 수정하고 합치려고 할 경우 conflict가 발생하기 때문에 작업 시작한 인원은 작업시작을 알려주거나 겹치지 않도록 조율할것.
 # 혹은 confic가 나지 않도록 조율해서 잘 merge 시킬것!
@@ -82,22 +97,13 @@ insert into `kimchi`.`show_director`
  
  
 ##############################
-select * from `kimchi`.`show_info`;
-select * from `kimchi`.`actor`;
-select * from `kimchi`.`show_actor`;
-select * from `kimchi`.`director`;
-select * from `kimchi`.`show_director`;
+-- select * from `kimchi`.`show_info`;
+-- select * from `kimchi`.`actor`;
+-- select * from `kimchi`.`show_actor`;
+-- select * from `kimchi`.`director`;
+-- select * from `kimchi`.`show_director`;
 ##############################
 
-
-
-
-/********************************
-	* edit by :  윤지아           
-	* date    :  2020.11.21                
-	* email   :  sjsmja@naver.com      
-	* comment :  더미 데이터 생성    
-*********************************/  
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # 2(제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
@@ -495,6 +501,7 @@ values
 'img/위쳐.jpg', 
 	#포스터 소스들이 전부 길어서 데이터 삽입이 되지 않아 url 길이 줄임
 	#원주소:https://dnm.nflximg.net/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABdc5Z29EM1NIz7veJHlLxTRu3lKyc3eGyhXX4UQ-lu19wTwgWZcq2oCo3WL3YZl0InxBOVmj_6B5zC3BypakjOQsFJUX8ieWRhHqV2FDOKulYRFg0r6yoh_WMXZnvA.jpg
+    # 간혹 동작하지 않아 서버 내부 별도 파일로 변경하였음 - 남호철 -
 '세계적인 판타지 대작이 넷플릭스 시리즈로 다시 태어난다!<br>
 어둠과 위험의 세계, 진실은 어디에 있을까...<br>
 운명으로 묶인 그들. 위쳐와 마법사, 홀로 남은 공주의 싸움이 시작된다.'); 
@@ -1015,12 +1022,6 @@ insert into `kimchi`.`show_director`
  # 20(`show_id`, `director_id`) 순서
  (21, 13); # #사자 / 김주환
  
-/********************************
-* edit by : 안석진             
-* date    : 2020.11.22                     
-* email   : jeany980224@naver.com                     
-* comment : 더미데이터 생성                     
-*********************************/ 
 insert into `kimchi`.`show_info`(`title`, `type`, `country`, `data_added`, `release_year`, `duration`, `poster`,`description`)
 values 
 # (제목, 장르, 국가, 개봉일(등록일), 년도, 상영시간, 포스터url, 설명)
@@ -1427,7 +1428,7 @@ insert into `kimchi`.`show_director`
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
-테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>',5.0),
+테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>',5.0, 0),
 (1, 'admin', '테스트용 게시글입니다.',
 '테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
 테스트용 게시글입니다.<br>테스트용 게시글입니다.<br>
@@ -1447,21 +1448,21 @@ values
 
  #######
 
-##############################
-select * from `kimchi`.`show_info`;
-select * from `kimchi`.`actor`;
-select * from `kimchi`.`show_actor`;
-select * from `kimchi`.`director`;
-select * from `kimchi`.`show_director`;
-##############################
-select article_no, b.title, user_id, s.title, rating
-from kimchi.board b 
-join kimchi.show_info s 
-on b.show_id = s.show_id 
-limit 0, 10;
+-- ##############################
+-- select * from `kimchi`.`show_info`;
+-- select * from `kimchi`.`actor`;
+-- select * from `kimchi`.`show_actor`;
+-- select * from `kimchi`.`director`;
+-- select * from `kimchi`.`show_director`;
+-- ##############################
+-- select article_no, b.title, user_id, s.title, rating
+-- from kimchi.board b 
+-- join kimchi.show_info s 
+-- on b.show_id = s.show_id 
+-- limit 0, 10;
 
 
-select * from kimchi.comment;
-select * from kimchi.board;
+-- select * from kimchi.comment;
+-- select * from kimchi.board;
 
-select count(user_id) from kimchi.like where user_id='admin' and article_no = 3;
+-- select count(user_id) from kimchi.like where user_id='admin' and article_no = 3;
