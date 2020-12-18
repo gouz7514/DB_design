@@ -59,6 +59,7 @@ a {
 .body {
   width: 1080px;
   margin: auto;
+  margin-bottom: 20px;
 }
 .menu {
   width:1080px;
