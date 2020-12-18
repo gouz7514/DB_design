@@ -6,3 +6,11 @@
     width: 250px;
     height: 350px;
 }
+.search-btn {
+    background-color: #e50914;
+    color: #fff;
+    padding: 7px 7px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+}
