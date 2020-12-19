@@ -33,10 +33,14 @@
         </ul>
       </div>
     <div class="body-content">
+      <form action="/forum/search" method="post">
       <span class="search-content">
-        <input type="text" class="search-box search-movie" placeholder="영화 명을 입력하세요.">
-        <button type="submit" class="search-box search-btn">검색</button>
+        <input type="text" name='target' class="search-box search-forum" placeholder="작품 제목을 입력하세요.">
+        <button class="search-box search-btn" type='submit'>
+          <span>찾기</span>
+        </button>
       </span>
+    </form>
       <table class="table-movie">
         <tr>
           <%for(var i in info){%>
