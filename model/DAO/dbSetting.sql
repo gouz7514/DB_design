@@ -160,10 +160,14 @@ DROP PROCEDURE IF EXISTS SearchWithTitle;
 DELIMITER //
  CREATE PROCEDURE SearchWithTitle(IN str VARCHAR(100))
    BEGIN
-	SELECT `article_no`, `title`, `user_id`
-    FROM `kimchi`.`board` 
-    WHERE `show_id` IN (SELECT `show_id` 
-						FROM `kimchi`.`show_info` 
+	SELECT article_no, b.title as a_title, 
+           user_id, s.title as s_title, 
+           rating as rt, s.show_id as show_id
+    FROM `kimchi`.`board` b
+		join kimchi.show_info s 
+			on b.show_id = s.show_id
+    WHERE s.`show_id` IN (SELECT si.show_id
+						FROM `kimchi`.`show_info` si
 						WHERE `title` LIKE str);
    END //
 DELIMITER ;

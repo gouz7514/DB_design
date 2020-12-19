@@ -108,6 +108,16 @@ router.post('/upvote', function (req, res, next) {
     })
 })
 
+router.post('/search', function (req, res, next) {
+    console.log('SEARCHING with : '+ req.body.target)
+    infoDAO.searchWithString(req.body.target, (err, searchResult) => {
+        if(err) return next(err) 
+        console.log('SEARCH RESULT : ',searchResult)
+        res.render('forum', {article : searchResult[0]})
+    })
+});
+
+
 
 
 module.exports = router

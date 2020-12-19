@@ -1455,11 +1455,12 @@ values
 -- select * from `kimchi`.`director`;
 -- select * from `kimchi`.`show_director`;
 -- ##############################
--- select article_no, b.title, user_id, s.title, rating
--- from kimchi.board b 
--- join kimchi.show_info s 
--- on b.show_id = s.show_id 
--- limit 0, 10;
+select article_no, b.title, user_id, s.title, rating
+from kimchi.board b 
+join kimchi.show_info s 
+on b.show_id = s.show_id 
+order by article_no desc
+limit 0, 10;
 
 
 -- select * from kimchi.comment;

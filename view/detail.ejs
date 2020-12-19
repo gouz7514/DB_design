@@ -79,9 +79,17 @@
                 </tr>
                 <tr class="movie-detail table-row">
                     <td class="movie-detail go-forum" colspan="2">
-                        <a href="">게시판 가기</a>
+                      <form action="/forum/search" method="post">
+                        <span class="search-content">
+                          <input hidden type="text" name='<%=showData.title%>' class="search-box search-forum" placeholder="게시글 제목을 입력하세요.">
+                          <button class="button-forum-write" type='submit'>
+                            <span>게시판 가기</span>
+                          </button>
+                        </span>
+                      </form>
                     </td>
                 </tr>
+                
             </table>
         </div>
       </div>
