@@ -81,8 +81,8 @@
                     <td class="movie-detail go-forum" colspan="2">
                       <form action="/forum/search" method="post">
                         <span class="search-content">
-                          <input hidden type="text" name='<%=showData.title%>' class="search-box search-forum" placeholder="게시글 제목을 입력하세요.">
-                          <button class="button-forum-write" type='submit'>
+                          <input hidden name='target' type="text" value='<%=showData.title%>'>
+                          <button type='submit'>
                             <span>게시판 가기</span>
                           </button>
                         </span>
