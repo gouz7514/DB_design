@@ -35,7 +35,8 @@
 
     <div class="body-content">
       <div class="forum-write-form">
-          <form action="/forum/write" method="post">
+          <form action="/forum/write/upload" method="post">
+          <input name='user_id' hidden value='<%=user.id%>'></input>
           <div class="forum-write-content">
               <div class="forum-write-row">
                   <h3 class="forum-write-row-title">

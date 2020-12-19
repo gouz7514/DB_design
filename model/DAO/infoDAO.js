@@ -63,6 +63,33 @@ var infoDAO = {
         })
     },
 
+    searchWithString : (param, callback) => {
+        param = '%' + param + '%'
+        console.log('Searching title contain : ' + param)
+        var sql = 'CALL SearchWithTitle(?)'
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result)
+        })
+    },
+
+    searchWithShowID : (param, callback) => {
+        var sql = 'select * from kimchi.board where show_id = ?'
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result)
+        })
+    },
+
+    searchShowIDwithTitle : (param, callback) => {
+        param = '%' + param + '%'
+        var sql = 'select show_id from kimchi.show_info where title like ?'
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result[0])
+        })
+    },
+
 }
 
 module.exports = infoDAO;

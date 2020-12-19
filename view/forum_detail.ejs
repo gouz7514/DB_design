@@ -48,13 +48,25 @@
           <p class="forum-detail content-detail">
             <%-data.body%>
           </p>
+          <!-- MODIFY & DELETE IS NOT IMPLEMENTED
+            <%if(user.id == data.user_id){%>
+              <form action="/forum/write/modify" method="post">
+                <button type="수정하기">수정하기</button>
+              </form>
+              <form action="/forum/delete" method="post">
+                <input name='user_id' hidden value='<%=user.id%>'></input>
+                <input name='writer_id' hidden value='<%=data.user_id%>'></input>
+                <button type="삭제하기">삭제하기</button>
+              </form>
+            <% } %> 
+           -->
             <form action="/forum/upvote" method="post">
               <div class="forum-detail upvote">
                 <input name='article_no' hidden value='<%=data.article_no%>'></input>
                 <input name='user_id' hidden value='<%=user.id%>'></input>
                 <div class="forum-detail upvote-number">추천수 : <%=data.like%></div>
                 <%if(user){%>
-                <button class="forum-detail upvote-btn" type="submit">추천하기</button>
+                  <button class="forum-detail upvote-btn" type="submit">추천하기</button>
                 <% } %> 
               </div>
             </form>

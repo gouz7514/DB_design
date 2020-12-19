@@ -1,6 +1,14 @@
 var con = require('../connection');
 
 var forumDAO = {
+    writeArticle : (param, callback) => {
+        var sql = `insert into kimchi.board(show_id, user_id, title, body, rating) values (?, ?, ?, ?, ?)`
+        con.query(sql, param, function(err,result){
+            if(err) return callback(err)
+            callback(null, result[0])
+        })
+    },
+
     getArticle : (param, callback) => {
         var sql = `select * from kimchi.board where article_no = ?`
         con.query(sql, param, function(err,result){
@@ -18,6 +26,7 @@ var forumDAO = {
                     from kimchi.board b 
                         join kimchi.show_info s 
                             on b.show_id = s.show_id 
+                    order by article_no desc
                     limit ?, 10`
         con.query(sql, param, function(err,result){
             if(err) return callback(err)
@@ -35,24 +44,6 @@ var forumDAO = {
 
     insertComment : (param, callback) => {
         var sql = `insert into kimchi.comment(user_id, article_no, comment) values (?, ?, ?)`
-        con.query(sql, param, function(err,result){
-            if(err) return callback(err)
-            callback(null, result)
-        })
-    },
-
-    searchWithString : (param, callback) => {
-        param = '%' + param + '%'
-        console.log('Searching title contain : ' + param)
-        var sql = 'CALL SearchWithTitle(?)'
-        con.query(sql, param, function(err,result){
-            if(err) return callback(err)
-            callback(null, result)
-        })
-    },
-
-    searchWithShowID : (param, callback) => {
-        var sql = 'select * from kimchi.board where show_id = ?'
         con.query(sql, param, function(err,result){
             if(err) return callback(err)
             callback(null, result)
